@@ -30,3 +30,6 @@ border:10px solid purple;
 display:inline-block;
 width: 500px;
 }
+div {
+    display: flex;
+}
