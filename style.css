@@ -1,5 +1,6 @@
+```css
 body {
-background-color: #eef6ff;
+    background-color: #eef6ff;
     padding: 35px;
     margin: 30px;
 }
@@ -49,85 +50,94 @@ h2 {
     color: #123c69;
     font-size: 35px;
 }
+
 .icdl {
-color:#168aad;
-font-size:25px;
-background-color:#f8fbff;
-border:10px solid #168aad;
+    color: #168aad;
+    font-size: 25px;
+    background-color: #f8fbff;
+    border: 10px solid #168aad;
 }
+
 .typing {
-color:#168aad;
-font-size:25px;
-background-color:#f8fbff;
-border:10px solid #168aad;
+    color: #168aad;
+    font-size: 25px;
+    background-color: #f8fbff;
+    border: 10px solid #168aad;
 }
+
 .programming {
-color:#168aad;
-font-size:25px;
-background-color:#f8fbff;
-border:10px solid #168aad;
+    color: #168aad;
+    font-size: 25px;
+    background-color: #f8fbff;
+    border: 10px solid #168aad;
 }
+
 .english {
-color:#168aad;
-font-size:25px;
-background-color:#f8fbff;
-border:10px solid #168aad;
+    color: #168aad;
+    font-size: 25px;
+    background-color: #f8fbff;
+    border: 10px solid #168aad;
 }
+
 .skill-icdl,
 .skill-typing,
 .skill-programming,
 .skill-english {
     width: 220px;
 }
+
 .skill-icdl p {
-    color: black;
-    background-color: yellow;
+    color: #222;
+    background-color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 3px;
-    border: 10px solid purple;
-    width:200px;
-    height:100px;
+    border: 10px solid #4f86c6;
+    width: 200px;
+    height: 100px;
 }
+
 .skill-typing p {
-    color: black;
-    background-color: yellow;
+    color: #222;
+    background-color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 3px;
-    border: 10px solid purple;
-    width:200px;
-    height:100px;
+    border: 10px solid #4f86c6;
+    width: 200px;
+    height: 100px;
 }
+
 .skill-programming p {
-    color: black;
-    background-color: yellow;
+    color: #222;
+    background-color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 3px;
-    border: 10px solid purple;
-    width:220px;
-    height:120px;
+    border: 10px solid #4f86c6;
+    width: 220px;
+    height: 120px;
 }
+
 .skill-english p {
-    color: black;
-    background-color: yellow;
+    color: #222;
+    background-color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 3px;
-    border: 10px solid purple;
-    width:220px;
-    height:120px;
+    border: 10px solid #4f86c6;
+    width: 220px;
+    height: 120px;
 }
+
 .thank-you p {
-    color: black;
-    background-color: yellow;
+    color: #222;
+    background-color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 3px;
-    border: 10px solid purple;
-    width:300px;
-    height:50px;
+    border: 10px solid #4f86c6;
+    width: 300px;
+    height: 50px;
 }
-
-
+```
