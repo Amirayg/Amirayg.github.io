@@ -27,5 +27,6 @@ font-size:20px;
 padding:10px;
 border-radius:3px;
 border:10px solid purple;
-display:inline-block
+display:inline-block;
+width: 500px;
 }
