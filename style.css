@@ -20,6 +20,7 @@ padding-bottom:20px;
 margin:10px;
 border-radius:5px;
 border:10px solid red;
+order: 2;
 }
 
 p {
@@ -39,4 +40,7 @@ div {
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+div p {
+    order: 1;
 }
