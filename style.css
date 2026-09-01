@@ -79,3 +79,45 @@ border:10px solid teal;
 .skill-english {
     width: 220px;
 }
+.skill-icdl p {
+    color: black;
+    background-color: yellow;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 10px solid purple;
+    width:200px;
+    height:100px;
+}
+.skill-typing p {
+    color: black;
+    background-color: yellow;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 10px solid purple;
+    width:200px;
+    height:100px;
+}
+.skill-programming p {
+    color: black;
+    background-color: yellow;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 10px solid purple;
+    width:220px;
+    height:120px;
+}
+.skill-english p {
+    color: black;
+    background-color: yellow;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 10px solid purple;
+    width:220px;
+    height:120px;
+}
+
+
