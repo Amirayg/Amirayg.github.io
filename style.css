@@ -30,6 +30,7 @@ padding:10px;
 border-radius:3px;
 border:10px solid purple;
 width: 500px;
+flex: 1;
 }
 div {
     display: flex;
