@@ -1,3 +1,17 @@
 body {
     background-color: lightblue;
 }
+h1 {
+    color: darkblue;
+    font-size: 40px;
+}
+
+h2 {
+    color: navy;
+    font-size: 28px;
+}
+
+p {
+    color: black;
+    font-size: 18px;
+}
