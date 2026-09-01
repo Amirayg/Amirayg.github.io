@@ -52,18 +52,26 @@ h2 {
 .icdl {
 color:goldenrod;
 font-size:25px;
+background-color:white;
+border:10px solid white;
 }
 .typing {
 color:goldenrod;
 font-size:25px;
+background-color:white;
+border:10px solid white;
 }
 .programming {
 color:goldenrod;
 font-size:25px;
+background-color:white;
+border:10px solid white;
 }
 .english {
 color:goldenrod;
 font-size:25px;
+background-color:white;
+border:10px solid white;
 }
 .skill-icdl,
 .skill-typing,
