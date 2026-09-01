@@ -1,26 +1,26 @@
 body {
-background-color: lightblue;
+background-color: #eef6ff;
     padding: 35px;
     margin: 30px;
 }
 
 .welcome {
     color: white;
-    background-color: darkblue;
+    background-color: #123c69;
     font-size: 40px;
     margin-bottom: 30px;
     padding: 20px;
     border-radius: 10px;
-    border: 12px solid green;
+    border: 12px solid #2e8b57;
 }
 
 p {
-    color: black;
-    background-color: yellow;
+    color: #222;
+    background-color: white;
     font-size: 20px;
     padding: 10px;
     border-radius: 3px;
-    border: 10px solid purple;
+    border: 10px solid #4f86c6;
     width: 500px;
     height: 50px;
 }
@@ -28,12 +28,12 @@ p {
 .about h2 {
     display: flex;
     justify-content: center;
-    color: orange;
-    background-color: aqua;
+    color: #123c69;
+    background-color: #d9f3f0;
     font-size: 30px;
     padding: 15px;
     border-radius: 5px;
-    border: 11px solid blue;
+    border: 11px solid #168aad;
     width: 800px;
 }
 
@@ -46,32 +46,32 @@ p {
 }
 
 h2 {
-    color: red;
+    color: #123c69;
     font-size: 35px;
 }
 .icdl {
-color:goldenrod;
+color:#168aad;
 font-size:25px;
-background-color:white;
-border:10px solid teal;
+background-color:#f8fbff;
+border:10px solid #168aad;
 }
 .typing {
-color:goldenrod;
+color:#168aad;
 font-size:25px;
-background-color:white;
-border:10px solid teal;
+background-color:#f8fbff;
+border:10px solid #168aad;
 }
 .programming {
-color:goldenrod;
+color:#168aad;
 font-size:25px;
-background-color:white;
-border:10px solid teal;
+background-color:#f8fbff;
+border:10px solid #168aad;
 }
 .english {
-color:goldenrod;
+color:#168aad;
 font-size:25px;
-background-color:white;
-border:10px solid teal;
+background-color:#f8fbff;
+border:10px solid #168aad;
 }
 .skill-icdl,
 .skill-typing,
