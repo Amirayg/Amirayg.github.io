@@ -44,3 +44,6 @@ div {
 div p {
     order: 1;
 }
+div h2 {
+    align-self: flex-start;
+}
