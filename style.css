@@ -65,3 +65,9 @@ font-size:25px;
 color:goldenrod;
 font-size:25px;
 }
+.skill-icdl,
+.skill-typing,
+.skill-programming,
+.skill-english {
+    width: 220px;
+}
