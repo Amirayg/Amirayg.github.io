@@ -93,6 +93,7 @@ h2 {
 /* Responsive Images */
 
 img {
+    width: 600px;
     max-width: 100%;
     height: auto;
 }
