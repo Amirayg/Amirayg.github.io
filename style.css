@@ -68,11 +68,11 @@ img {
 /* Skills */
 
 .skills {
-    display: flex;
-    flex-direction: row;
+.skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    justify-content: space-between;
-    align-items: stretch;
+}
 }
 
 /* Equal Skill Boxes */
