@@ -178,4 +178,20 @@ h2 {
     .skills {
         flex-wrap: wrap;
     }
+    img {
+    width: 700px !important;
+    height: auto !important;
+}
+
+.skill-icdl,
+.skill-typing,
+.skill-programming,
+.skill-english {
+    width: 300px !important;
+    flex: none !important;
+}
+
+p {
+    font-size: 22px !important;
+}
 }
