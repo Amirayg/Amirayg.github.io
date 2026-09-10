@@ -93,8 +93,9 @@ h2 {
 /* Responsive Images */
 
 img {
-    width: 100%;
-    height: 500px;
+    width: 730px;
+    height: 938px;
+    max-width: 100%;
     object-fit: contain;
 }
 
