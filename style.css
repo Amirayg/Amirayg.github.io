@@ -145,7 +145,7 @@ h2 {
 }
 
 
-/* Responsive Design */
+/* Mobile */
 
 @media (max-width: 600px) {
 
@@ -192,5 +192,15 @@ h2 {
     .thank-you p {
         width: 100%;
         height: auto;
+    }
+}
+
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .skills {
+        flex-wrap: wrap;
     }
 }
