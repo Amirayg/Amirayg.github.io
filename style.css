@@ -141,11 +141,16 @@ h2 {
  
     }
 @media (max-width: 600px) {
+@media (max-width: 600px) {
     .skills {
         flex-direction: column;
     }
 
     .about h2 {
+        width: 100%;
+    }
+
+    p {
         width: 100%;
     }
 }
