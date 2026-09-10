@@ -1,30 +1,35 @@
+```css
 * {
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     background-color: #c7e3f4;
-    padding: 35px;
-    margin: 30px;
+    padding: 2rem;
+    margin: 0;
 }
 
 .welcome {
     color: white;
     background-color: #123c69;
-    font-size: 40px;
-    margin-bottom: 30px;
-    padding: 20px;
-    border-radius: 10px;
-    border: 12px solid #2e8b57;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    padding: 1.25rem;
+    border-radius: 0.6rem;
+    border: 0.75rem solid #2e8b57;
 }
 
 p {
     color: #222;
     background-color: white;
-    font-size: 20px;
-    padding: 10px;
-    border-radius: 3px;
-    border: 10px solid #4f86c6;
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    border-radius: 0.2rem;
+    border: 0.6rem solid #4f86c6;
     width: 100%;
     height: auto;
 }
@@ -34,17 +39,18 @@ p {
     justify-content: center;
     color: #123c69;
     background-color: #d9f3f0;
-    font-size: 30px;
-    padding: 15px;
-    border-radius: 5px;
-    border: 11px solid #168aad;
-    width: 800px;
+    font-size: 1.9rem;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 0.7rem solid #168aad;
+    width: 80%;
+    max-width: 800px;
 }
 
 .skills {
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -58,38 +64,18 @@ p {
 
 h2 {
     color: #123c69;
-    font-size: 35px;
+    font-size: 2rem;
 }
 
-.icdl {
-    color: #168aad;
-    font-size: 25px;
-    background-color: #f8fbff;
-    border: 10px solid #168aad;
-}
-
-.typing {
-    color: #168aad;
-    font-size: 25px;
-    background-color: #f8fbff;
-    border: 10px solid #168aad;
-}
-
-.programming {
-    color: #168aad;
-    font-size: 25px;
-    background-color: #f8fbff;
-    border: 10px solid #168aad;
-}
-
+.icdl,
+.typing,
+.programming,
 .english {
     color: #168aad;
-    font-size: 25px;
+    font-size: 1.5rem;
     background-color: #f8fbff;
-    border: 10px solid #168aad;
+    border: 0.6rem solid #168aad;
 }
-
-
 
 .skill-icdl p,
 .skill-typing p,
@@ -99,30 +85,33 @@ h2 {
     height: auto;
 }
 
+.thank-you p {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
 
 /* Mobile */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 10px;
-        margin: 0;
+        padding: 0.6rem;
     }
 
     .welcome {
-        font-size: 20px;
-        padding: 10px;
+        font-size: 1.4rem;
+        padding: 0.7rem;
     }
 
     .about h2 {
         width: 100%;
-        font-size: 25px;
+        font-size: 1.5rem;
     }
 
     p {
-        width: 100%;
-        height: auto;
-        font-size: 18px;
+        font-size: 1rem;
     }
 
     .skills {
@@ -134,19 +123,7 @@ h2 {
     .skill-programming,
     .skill-english {
         width: 100%;
-    }
-
-    .skill-icdl p,
-    .skill-typing p,
-    .skill-programming p,
-    .skill-english p {
-        width: 100%;
-        height: auto;
-    }
-
-    .thank-you p {
-        width: 100%;
-        height: auto;
+        flex-basis: auto;
     }
 }
 
@@ -159,3 +136,4 @@ h2 {
         flex-wrap: wrap;
     }
 }
+```
