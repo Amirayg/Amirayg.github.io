@@ -30,13 +30,13 @@ body {
 p {
     color: #222;
     background-color: white;
-    font-size: 1.15rem;
+    font-size: 1.25rem;
     line-height: 1.6;
     padding: 1rem;
     border-radius: 0.2rem;
     border: 0.6rem solid #4f86c6;
-    width: 80%;
-    max-width: 800px;
+    width: 75%;
+    max-width: 750px;
     min-height: 100px;
     height: auto;
 }
