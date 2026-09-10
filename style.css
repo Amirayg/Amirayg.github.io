@@ -12,6 +12,8 @@ body {
     margin: 0;
 }
 
+/* Welcome */
+
 .welcome {
     color: white;
     background-color: #123c69;
@@ -22,16 +24,21 @@ body {
     border: 0.75rem solid #2e8b57;
 }
 
+/* Text */
+
 p {
     color: #222;
     background-color: white;
-    font-size: 1.1rem;
-    padding: 0.75rem;
+    font-size: 1.2rem;
+    padding: 1rem;
     border-radius: 0.2rem;
     border: 0.6rem solid #4f86c6;
-    width: 100%;
+    width: 90%;
+    max-width: 700px;
     height: auto;
 }
+
+/* About */
 
 .about h2 {
     display: flex;
@@ -46,6 +53,18 @@ p {
     max-width: 800px;
 }
 
+/* Image */
+
+img {
+    display: block;
+    width: 500px;
+    height: auto;
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Skills */
+
 .skills {
     display: flex;
     flex-direction: row;
@@ -58,13 +77,15 @@ p {
 .skill-typing,
 .skill-programming,
 .skill-english {
-    flex-basis: 220px;
+    flex-basis: 280px;
 }
 
 h2 {
     color: #123c69;
     font-size: 2rem;
 }
+
+/* Skill titles */
 
 .icdl,
 .typing,
@@ -76,6 +97,8 @@ h2 {
     border: 0.6rem solid #168aad;
 }
 
+/* Skill text */
+
 .skill-icdl p,
 .skill-typing p,
 .skill-programming p,
@@ -84,16 +107,12 @@ h2 {
     height: auto;
 }
 
+/* Thank you */
+
 .thank-you p {
     width: 100%;
     max-width: 300px;
     height: auto;
-}
-
-/* Responsive Images */
-img {
-    display: block;
-    margin: auto;
 }
 
 /* Mobile */
@@ -116,6 +135,7 @@ img {
 
     p {
         font-size: 1rem;
+        width: 100%;
     }
 
     .skills {
