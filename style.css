@@ -183,15 +183,4 @@ h2 {
     height: auto !important;
 }
 
-.skill-icdl,
-.skill-typing,
-.skill-programming,
-.skill-english {
-    width: 300px !important;
-    flex: none !important;
-}
-
-p {
-    font-size: 22px !important;
-}
 }
