@@ -1,3 +1,5 @@
-const title = document.querySelector("h1");
+const button = document.querySelector("#helloButton");
 
-title.textContent = "AYG JavaScript Website!";
+button.addEventListener("click", function () {
+    console.log("AYG button clicked!");
+});
