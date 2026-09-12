@@ -183,7 +183,7 @@ console.log("Game continues...");
 
 
 /* =========================
-   API
+   OpenDota API
 ========================= */
 
 const apiData = document.querySelector("#apiData");
@@ -207,8 +207,43 @@ async function getHeroes() {
         console.log("OpenDota Data:");
         console.log(data);
 
-        apiData.textContent =
-            "Dota 2 heroes loaded successfully!";
+
+        /* My Favorite Heroes */
+
+        const myHeroes = [
+            "Tinker",
+            "Shadow Fiend",
+            "Storm Spirit",
+            "Void Spirit",
+            "Earth Spirit",
+            "Ember Spirit",
+            "Lina",
+            "Invoker",
+            "Monkey King"
+        ];
+
+
+        /* Filter My Heroes */
+
+        const filteredHeroes = data.filter((hero) => {
+            return myHeroes.includes(hero.localized_name);
+        });
+
+
+        /* Display Heroes */
+
+        apiData.innerHTML = "";
+
+        filteredHeroes.forEach((hero) => {
+
+            const heroName = document.createElement("p");
+
+            heroName.textContent = hero.localized_name;
+
+            apiData.appendChild(heroName);
+
+        });
+
 
     } catch (error) {
 
