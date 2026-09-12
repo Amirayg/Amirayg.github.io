@@ -1,7 +1,3 @@
-function calculateDamage(damage, bonus) {
-    return damage + bonus;
-}
+const title = document.querySelector("h1");
 
-let totalDamage = calculateDamage(100, 50);
-
-console.log(totalDamage);
+title.textContent = "AYG JavaScript Website!";
