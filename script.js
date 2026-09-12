@@ -1,637 +1,515 @@
 /* =========================
-   JavaScript Basics
+   PARTICLE BACKGROUND
 ========================= */
 
-console.log("AYG Website Started!");
+const canvas = document.getElementById("particleCanvas");
+const ctx = canvas.getContext("2d");
 
-const playerName = "Amirhossein";
-const favoriteHero = "Tinker";
+let particles = [];
 
-console.log(playerName);
-console.log(favoriteHero);
-
-
-/* =========================
-   Function
-========================= */
-
-function introduce(name) {
-    return `Hello ${name}!`;
-}
-
-console.log(introduce(playerName));
-
-
-/* =========================
-   Condition
-========================= */
-
-const heroDamage = 55;
-
-if (heroDamage > 50) {
-    console.log("Strong hero!");
-} else {
-    console.log("Weak hero!");
-}
-
-
-/* =========================
-   DOM
-========================= */
-
-const button = document.querySelector("#helloButton");
-const title = document.querySelector("h1");
-
-button.addEventListener("click", function () {
-    title.classList.toggle("highlight");
-});
-
-
-/* =========================
-   Add Text
-========================= */
-
-const addButton = document.querySelector("#addButton");
-const removeButton = document.querySelector("#removeButton");
-
-let newText;
-
-addButton.addEventListener("click", function () {
-
-    newText = document.createElement("p");
-
-    newText.textContent =
-        "This paragraph was created with JavaScript!";
-
-    document.body.appendChild(newText);
-});
-
-removeButton.addEventListener("click", function () {
-
-    if (newText) {
-        newText.remove();
-    }
-
-});
-
-
-/* =========================
-   Input
-========================= */
-
-const nameInput = document.querySelector("#nameInput");
-const showButton = document.querySelector("#showButton");
-const result = document.querySelector("#result");
-
-showButton.addEventListener("click", function () {
-
-    const name = nameInput.value.trim();
-
-    if (name === "") {
-
-        result.textContent = "Please enter your name!";
-
-    } else {
-
-        result.innerHTML = `<strong>Hello ${name}!</strong>`;
-
-        nameInput.value = "";
-    }
-
-});
-
-
-/* =========================
-   Array
-========================= */
-
-const heroes = [
-    "Tinker",
-    "Invoker",
-    "Storm Spirit"
-];
-
-console.log(heroes);
-
-heroes.push("Lina");
-
-console.log(heroes);
-
-console.log(heroes.includes("Invoker"));
-console.log(heroes.length);
-
-
-/* =========================
-   concat()
-========================= */
-
-const midHeroes = [
-    "Tinker",
-    "Invoker"
-];
-
-const moreHeroes = [
-    "Storm Spirit",
-    "Lina"
-];
-
-const allHeroes = midHeroes.concat(moreHeroes);
-
-console.log("All Heroes:");
-console.log(allHeroes);
-
-
-/* =========================
-   join()
-========================= */
-
-const roles = [
-    "Nuker",
-    "Pusher",
-    "Escape"
-];
-
-const rolesText = roles.join(", ");
-
-console.log(rolesText);
-
-
-/* =========================
-   Object
-========================= */
-
-const hero = {
-
-    name: "Tinker",
-    role: "Mid",
-    damage: 55
-
+const mouse = {
+    x: null,
+    y: null,
+    radius: 140
 };
 
-console.log(hero);
-console.log(hero.name);
-console.log(hero.role);
 
-
-/* =========================
-   JSON
-========================= */
-
-const heroJSON = JSON.stringify(hero);
-
-console.log(heroJSON);
-
-const normalHero = JSON.parse(heroJSON);
-
-console.log(normalHero);
-
-
-/* =========================
-   localStorage
-========================= */
-
-localStorage.setItem(
-    "favoriteHero",
-    JSON.stringify(hero)
+const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
 );
 
-const savedHero = JSON.parse(
-    localStorage.getItem("favoriteHero")
+
+/* -------------------------
+   Canvas Size
+------------------------- */
+
+function resizeCanvas() {
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    createParticles();
+
+    if (reducedMotion.matches) {
+        drawParticles();
+    }
+}
+
+
+/* -------------------------
+   Particle Count
+------------------------- */
+
+function getParticleCount() {
+
+    if (window.innerWidth <= 600) {
+        return 28;
+    }
+
+    if (window.innerWidth <= 1000) {
+        return 45;
+    }
+
+    return 65;
+}
+
+
+/* -------------------------
+   Create Particles
+------------------------- */
+
+function createParticles() {
+
+    particles = [];
+
+    const particleCount = getParticleCount();
+
+    for (let i = 0; i < particleCount; i++) {
+
+        particles.push({
+
+            x: Math.random() * canvas.width,
+
+            y: Math.random() * canvas.height,
+
+            vx:
+                (Math.random() - 0.5) *
+                (reducedMotion.matches ? 0 : 0.35),
+
+            vy:
+                (Math.random() - 0.5) *
+                (reducedMotion.matches ? 0 : 0.35),
+
+            size:
+                Math.random() * 2 + 1
+
+        });
+    }
+}
+
+
+/* -------------------------
+   Draw Particles
+------------------------- */
+
+function drawParticles() {
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+
+    const connectionDistance =
+        window.innerWidth <= 600
+            ? 95
+            : 125;
+
+
+    /* Draw and move particles */
+
+    particles.forEach((particle) => {
+
+        if (!reducedMotion.matches) {
+
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+
+
+            /* Bounce from screen edges */
+
+            if (
+                particle.x <= 0 ||
+                particle.x >= canvas.width
+            ) {
+                particle.vx *= -1;
+            }
+
+
+            if (
+                particle.y <= 0 ||
+                particle.y >= canvas.height
+            ) {
+                particle.vy *= -1;
+            }
+
+
+            /* Mouse interaction */
+
+            if (
+                mouse.x !== null &&
+                mouse.y !== null
+            ) {
+
+                const dx =
+                    particle.x - mouse.x;
+
+                const dy =
+                    particle.y - mouse.y;
+
+                const distance =
+                    Math.sqrt(
+                        dx * dx +
+                        dy * dy
+                    );
+
+
+                if (
+                    distance < mouse.radius &&
+                    distance > 0
+                ) {
+
+                    const force =
+                        (mouse.radius - distance) /
+                        mouse.radius;
+
+                    particle.x +=
+                        (dx / distance) *
+                        force *
+                        1.2;
+
+                    particle.y +=
+                        (dy / distance) *
+                        force *
+                        1.2;
+                }
+            }
+        }
+
+
+        /* Particle */
+
+        ctx.beginPath();
+
+        ctx.arc(
+            particle.x,
+            particle.y,
+            particle.size,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fillStyle =
+            "rgba(65, 200, 255, 0.65)";
+
+        ctx.fill();
+
+    });
+
+
+    /* Draw connections */
+
+    for (
+        let i = 0;
+        i < particles.length;
+        i++
+    ) {
+
+        for (
+            let j = i + 1;
+            j < particles.length;
+            j++
+        ) {
+
+            const dx =
+                particles[i].x -
+                particles[j].x;
+
+            const dy =
+                particles[i].y -
+                particles[j].y;
+
+            const distance =
+                Math.sqrt(
+                    dx * dx +
+                    dy * dy
+                );
+
+
+            if (
+                distance <
+                connectionDistance
+            ) {
+
+                const opacity =
+                    (1 - distance / connectionDistance) *
+                    0.18;
+
+
+                ctx.beginPath();
+
+                ctx.moveTo(
+                    particles[i].x,
+                    particles[i].y
+                );
+
+                ctx.lineTo(
+                    particles[j].x,
+                    particles[j].y
+                );
+
+
+                ctx.strokeStyle =
+                    `rgba(30, 170, 255, ${opacity})`;
+
+                ctx.lineWidth = 1;
+
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+
+/* -------------------------
+   Animation
+------------------------- */
+
+function animateParticles() {
+
+    drawParticles();
+
+    requestAnimationFrame(
+        animateParticles
+    );
+}
+
+
+/* -------------------------
+   Mouse Movement
+------------------------- */
+
+window.addEventListener(
+    "pointermove",
+    (event) => {
+
+        if (event.pointerType !== "mouse") {
+            return;
+        }
+
+        mouse.x = event.clientX;
+        mouse.y = event.clientY;
+
+    }
 );
 
-console.log(savedHero);
+
+window.addEventListener(
+    "pointerleave",
+    () => {
+
+        mouse.x = null;
+        mouse.y = null;
+
+    }
+);
+
+
+/* -------------------------
+   Start Canvas
+------------------------- */
+
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
+
+resizeCanvas();
+
+
+if (!reducedMotion.matches) {
+    animateParticles();
+}
 
 
 /* =========================
-   Async JavaScript
+   MOBILE MENU
 ========================= */
 
-console.log("Game started!");
+const menuToggle =
+    document.getElementById("menuToggle");
 
-setTimeout(() => {
-
-    console.log("Tinker is ready!");
-
-}, 2000);
-
-console.log("Game continues...");
+const mainNav =
+    document.getElementById("mainNav");
 
 
-/* =========================
-   OpenDota API
-========================= */
+menuToggle.addEventListener(
+    "click",
+    () => {
 
-const apiData = document.querySelector("#apiData");
+        const isOpen =
+            mainNav.classList.toggle("open");
 
-async function getHeroes() {
 
-    apiData.textContent = "Loading...";
-
-    try {
-
-        const response = await fetch(
-            "https://api.opendota.com/api/heroes"
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen
         );
 
-        if (!response.ok) {
-            throw new Error(
-                `API Error: ${response.status}`
+
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
+        );
+
+    }
+);
+
+
+/* -------------------------
+   Close Menu After Click
+------------------------- */
+
+const navLinks =
+    document.querySelectorAll(".nav-link");
+
+
+navLinks.forEach((link) => {
+
+    link.addEventListener(
+        "click",
+        () => {
+
+            mainNav.classList.remove("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
             );
-        }
 
-        const data = await response.json();
-
-        console.log("OpenDota Data:");
-        console.log(data);
-
-
-        const myHeroes = [
-            "Tinker",
-            "Shadow Fiend",
-            "Storm Spirit",
-            "Void Spirit",
-            "Earth Spirit",
-            "Ember Spirit",
-            "Lina",
-            "Invoker",
-            "Monkey King"
-        ];
-
-
-        const filteredHeroes = data.filter((hero) => {
-
-            return myHeroes.includes(hero.localized_name);
-
-        });
-
-
-        apiData.innerHTML = "";
-
-        filteredHeroes.forEach((hero) => {
-
-            const heroName =
-                document.createElement("p");
-
-            heroName.textContent =
-                `${hero.localized_name} - ${getAttribute(hero.primary_attr)} - ${hero.roles.join(", ")}`;
-
-            apiData.appendChild(heroName);
-
-        });
-
-    } catch (error) {
-
-        console.log("FULL ERROR:", error);
-
-        apiData.textContent =
-            "Failed to load Dota 2 data.";
-
-    }
-
-}
-
-
-/* =========================
-   Get Hero Attribute
-========================= */
-
-function getAttribute(attribute) {
-
-    if (attribute === "str") {
-        return "Strength";
-    }
-
-    if (attribute === "agi") {
-        return "Agility";
-    }
-
-    if (attribute === "int") {
-        return "Intelligence";
-    }
-
-    if (attribute === "all") {
-        return "Universal";
-    }
-
-    return "Unknown";
-}
-
-
-/* =========================
-   Hero Stats API
-========================= */
-
-async function getHeroStats() {
-
-    try {
-
-        const response = await fetch(
-            "https://api.opendota.com/api/heroStats"
-        );
-
-        if (!response.ok) {
-            throw new Error(
-                `Stats API Error: ${response.status}`
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation menu"
             );
+
         }
+    );
 
-        const stats = await response.json();
-
-        console.log("Hero Stats:");
-        console.log(stats);
+});
 
 
-        const myHeroes = [
-            "Tinker",
-            "Shadow Fiend",
-            "Storm Spirit",
-            "Void Spirit",
-            "Earth Spirit",
-            "Ember Spirit",
-            "Lina",
-            "Invoker",
-            "Monkey King"
-        ];
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-        /* =========================
-           Filter Favorite Heroes
-        ========================= */
+const revealObserver =
+    new IntersectionObserver(
+        (entries) => {
 
-        const filteredStats = stats.filter((hero) => {
+            entries.forEach((entry) => {
 
-            return myHeroes.includes(hero.localized_name);
+                if (entry.isIntersecting) {
 
-        });
+                    entry.target.classList.add(
+                        "visible"
+                    );
 
+                    revealObserver.unobserve(
+                        entry.target
+                    );
 
-        /* =========================
-           Sort by Ancient Win Rate
-        ========================= */
-
-        filteredStats.sort((a, b) => {
-
-            const winRateA =
-                a["6_win"] / a["6_pick"];
-
-            const winRateB =
-                b["6_win"] / b["6_pick"];
-
-            return winRateB - winRateA;
-
-        });
-
-
-        /* =========================
-           Display Hero Cards
-        ========================= */
-
-        apiData.innerHTML = "";
-
-        filteredStats.forEach((hero) => {
-
-            const winRate =
-                (hero["6_win"] /
-                hero["6_pick"] * 100)
-                .toFixed(2);
-
-
-            const heroCard =
-                document.createElement("div");
-
-            heroCard.classList.add("hero-card");
-
-
-            const heroName =
-                document.createElement("h3");
-
-            heroName.textContent =
-                hero.localized_name;
-
-
-            const heroAttribute =
-                document.createElement("p");
-
-            heroAttribute.textContent =
-                `Attribute: ${getAttribute(hero.primary_attr)}`;
-
-
-            const heroRoles =
-                document.createElement("p");
-
-            heroRoles.textContent =
-                `Roles: ${hero.roles.join(", ")}`;
-
-
-            const heroWinRate =
-                document.createElement("p");
-
-            heroWinRate.textContent =
-                `Ancient Win Rate: ${winRate}%`;
-
-
-            heroCard.appendChild(heroName);
-            heroCard.appendChild(heroAttribute);
-            heroCard.appendChild(heroRoles);
-            heroCard.appendChild(heroWinRate);
-
-            apiData.appendChild(heroCard);
-
-        });
-
-
-        /* =========================
-           map()
-        ========================= */
-
-        const heroNames =
-            filteredStats.map((hero) => {
-
-                return hero.localized_name;
+                }
 
             });
 
-        console.log("Hero Names:");
-        console.log(heroNames);
+        },
+        {
+            threshold: 0.15
+        }
+    );
 
 
-        /* =========================
-           map() + Win Rate
-        ========================= */
+revealElements.forEach((element) => {
 
-        const heroInfo =
-            filteredStats.map((hero) => {
+    revealObserver.observe(element);
 
-                const winRate =
-                    (hero["6_win"] /
-                    hero["6_pick"] * 100)
-                    .toFixed(2);
-
-                return `${hero.localized_name} - Ancient Win Rate: ${winRate}%`;
-
-            });
-
-        console.log("Hero Info:");
-        console.log(heroInfo);
+});
 
 
-        /* =========================
-           reduce()
-        ========================= */
+/* =========================
+   ACTIVE NAVIGATION
+========================= */
 
-        const averageWinRate =
-            filteredStats.reduce((total, hero) => {
-
-                const winRate =
-                    hero["6_win"] /
-                    hero["6_pick"] * 100;
-
-                return total + winRate;
-
-            }, 0) / filteredStats.length;
+const sections =
+    document.querySelectorAll(
+        "main section[id]"
+    );
 
 
-        console.log(
-            `Average Ancient Win Rate: ${averageWinRate.toFixed(2)}%`
-        );
+const sectionObserver =
+    new IntersectionObserver(
+        (entries) => {
+
+            entries.forEach((entry) => {
+
+                if (!entry.isIntersecting) {
+                    return;
+                }
 
 
-        /* =========================
-           Top 3
-        ========================= */
-
-        const top3Heroes =
-            filteredStats.slice(0, 3);
-
-        console.log("Top 3 Heroes:");
-        console.log(top3Heroes);
+                const currentId =
+                    entry.target.getAttribute(
+                        "id"
+                    );
 
 
-        /* =========================
-           Display Top 3
-        ========================= */
+                navLinks.forEach((link) => {
 
-        const top3Title =
-            document.createElement("h2");
-
-        top3Title.textContent =
-            "Top 3 Heroes";
-
-        apiData.prepend(top3Title);
+                    const linkTarget =
+                        link.getAttribute("href");
 
 
-        top3Heroes.forEach((hero, index) => {
+                    if (
+                        linkTarget ===
+                        `#${currentId}`
+                    ) {
 
-            const winRate =
-                (hero["6_win"] /
-                hero["6_pick"] * 100)
-                .toFixed(2);
+                        link.classList.add(
+                            "active"
+                        );
 
+                    } else {
 
-            const topHero =
-                document.createElement("p");
+                        link.classList.remove(
+                            "active"
+                        );
 
+                    }
 
-            topHero.textContent =
-                `${index + 1}. ${hero.localized_name} - ${winRate}%`;
-
-
-            apiData.prepend(topHero);
-
-        });
-
-
-        /* =========================
-           join()
-        ========================= */
-
-        const top3Names =
-            top3Heroes.map((hero) => {
-
-                return hero.localized_name;
+                });
 
             });
 
-        console.log(
-            `Top 3: ${top3Names.join(", ")}`
-        );
+        },
+        {
+            threshold: 0.45
+        }
+    );
 
 
-        /* =========================
-           find()
-        ========================= */
+sections.forEach((section) => {
 
-        const tinker =
-            filteredStats.find((hero) => {
+    sectionObserver.observe(section);
 
-                return hero.localized_name === "Tinker";
-
-            });
-
-        console.log("Tinker:");
-        console.log(tinker);
+});
 
 
-        /* =========================
-           findIndex()
-        ========================= */
+/* =========================
+   FOOTER YEAR
+========================= */
 
-        const tinkerIndex =
-            filteredStats.findIndex((hero) => {
-
-                return hero.localized_name === "Tinker";
-
-            });
-
-        console.log("Tinker Index:");
-        console.log(tinkerIndex);
+const year =
+    document.getElementById("year");
 
 
-        /* =========================
-           some()
-        ========================= */
-
-        const hasTinker =
-            filteredStats.some((hero) => {
-
-                return hero.localized_name === "Tinker";
-
-            });
-
-        console.log("Does list contain Tinker?");
-        console.log(hasTinker);
-
-
-        /* =========================
-           every()
-        ========================= */
-
-        const allHeroesHaveStats =
-            filteredStats.every((hero) => {
-
-                return hero["6_pick"] > 0;
-
-            });
-
-        console.log("Do all heroes have Ancient stats?");
-        console.log(allHeroesHaveStats);
-
-
-        /* =========================
-           Sorted Heroes
-        ========================= */
-
-        console.log("Sorted Heroes:");
-        console.log(filteredStats);
-
-    } catch (error) {
-
-        console.log("Stats Error:", error);
-
-    }
-
-}
-
-
-getHeroes();
-getHeroStats();
+year.textContent =
+    new Date().getFullYear();
