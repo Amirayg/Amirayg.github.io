@@ -1,10 +1,7 @@
-let age = 14;
-let rank = "Ancient";
-
-if (age >= 13 && rank === "Ancient") {
-    console.log("Condition 1: true");
+function calculateDamage(damage, bonus) {
+    return damage + bonus;
 }
 
-if (rank === "Immortal" || rank === "Ancient") {
-    console.log("Condition 2: true");
-}
+let totalDamage = calculateDamage(100, 50);
+
+console.log(totalDamage);
