@@ -157,7 +157,8 @@ console.log(hero["stats"]["damage"]);
 const heroList = [
     { name: "Tinker", role: "Mid", damage: 55 },
     { name: "Invoker", role: "Mid", damage: 60 },
-    { name: "Puck", role: "Mid", damage: 52 }
+    { name: "Puck", role: "Mid", damage: 52 },
+    { name: "Lina", role: "Mid", damage: 58 }
 ];
 
 console.log(heroList[0].name);
@@ -167,3 +168,48 @@ for (const hero of heroList) {
     console.log(hero.name);
     console.log(hero.role);
 }
+
+
+/* map() */
+
+const names = heroList.map((hero) => {
+    return hero.name;
+});
+
+console.log(names);
+
+
+/* filter() */
+
+const strongHeroes = heroList.filter((hero) => {
+    return hero.damage > 55;
+});
+
+console.log(strongHeroes);
+
+
+/* find() */
+
+const foundHero = heroList.find((hero) => {
+    return hero.name === "Invoker";
+});
+
+console.log(foundHero);
+
+
+/* some() */
+
+const hasStrongHero = heroList.some((hero) => {
+    return hero.damage > 60;
+});
+
+console.log(hasStrongHero);
+
+
+/* every() */
+
+const allMid = heroList.every((hero) => {
+    return hero.role === "Mid";
+});
+
+console.log(allMid);
