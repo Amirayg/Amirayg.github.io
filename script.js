@@ -29,11 +29,12 @@ const showButton = document.querySelector("#showButton");
 const result = document.querySelector("#result");
 
 showButton.addEventListener("click", function () {
-    const name = nameInput.value;
+    const name = nameInput.value.trim();
 
     if (name === "") {
         result.textContent = "Please enter your name!";
     } else {
         result.textContent = "Hello " + name + "!";
+        nameInput.value = "";
     }
 });
