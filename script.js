@@ -66,3 +66,54 @@ console.log(heroes.indexOf("Shadow Fiend"));
 
 console.log(heroes[0]);
 console.log(heroes[2]);
+
+
+for (let i = 0; i < heroes.length; i++) {
+    console.log(heroes[i]);
+}
+
+
+for (let i = 0; i < heroes.length; i++) {
+    if (heroes[i].length > 5) {
+        console.log(heroes[i]);
+    }
+}
+
+
+for (const hero of heroes) {
+    console.log(hero);
+}
+
+
+let i = 0;
+
+while (i < heroes.length) {
+    console.log(heroes[i]);
+    i++;
+}
+
+
+let j = 0;
+
+do {
+    console.log(heroes[j]);
+    j++;
+} while (j < heroes.length);
+
+
+for (const hero of heroes) {
+    console.log(hero);
+
+    if (hero === "Invoker") {
+        break;
+    }
+}
+
+
+for (const hero of heroes) {
+    if (hero === "Invoker") {
+        continue;
+    }
+
+    console.log(hero);
+}
