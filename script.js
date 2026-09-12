@@ -51,6 +51,18 @@ const heroes = ["Tinker", "Invoker", "Storm Spirit"];
 
 heroes.push("Lina");
 
+heroes.pop();
+
+heroes.splice(1, 0, "Puck");
+
 console.log(heroes);
+console.log(heroes.length);
+
+console.log(heroes.includes("Invoker"));
+console.log(heroes.includes("Shadow Fiend"));
+
+console.log(heroes.indexOf("Invoker"));
+console.log(heroes.indexOf("Shadow Fiend"));
+
 console.log(heroes[0]);
 console.log(heroes[2]);
