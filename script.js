@@ -1,4 +1,3 @@
-```javascript
 const button = document.querySelector("#helloButton");
 const title = document.querySelector("h1");
 
@@ -421,6 +420,22 @@ async function startGame() {
 startGame();
 
 
+/* API + HTML */
+
+async function getPost() {
+
+    const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos/1"
+    );
+
+    const data = await response.json();
+
+    result.textContent = data.title;
+}
+
+getPost();
+
+
 /* Multiple API Data */
 
 const apiData = document.querySelector("#apiData");
@@ -444,4 +459,3 @@ async function getTodos() {
 }
 
 getTodos();
-```
