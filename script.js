@@ -50,9 +50,7 @@ paragraphs.forEach((paragraph) => {
 const heroes = ["Tinker", "Invoker", "Storm Spirit"];
 
 heroes.push("Lina");
-
 heroes.pop();
-
 heroes.splice(1, 0, "Puck");
 
 console.log(heroes);
@@ -366,11 +364,6 @@ console.log(savedHero.name);
 console.log(savedHero.role);
 
 
-/* Remove localStorage data */
-
-// localStorage.removeItem("playerName");
-
-
 /* Date & Time */
 
 const now = new Date();
@@ -388,3 +381,56 @@ console.log(`Year: ${now.getFullYear()}`);
 console.log(`Month: ${now.getMonth() + 1}`);
 console.log(`Day: ${now.getDate()}`);
 console.log(`Time: ${now.getHours()}:${now.getMinutes()}`);
+
+
+/* Async JavaScript */
+
+console.log("Game started!");
+
+setTimeout(() => {
+    console.log("Tinker is ready!");
+}, 2000);
+
+console.log("Game continues...");
+
+
+/* Promise */
+
+const match = new Promise((resolve, reject) => {
+
+    setTimeout(() => {
+        resolve("Match found!");
+    }, 2000);
+
+});
+
+match.then((result) => {
+    console.log(result);
+});
+
+
+/* async / await */
+
+async function startGame() {
+    const result = await match;
+
+    console.log(result);
+}
+
+startGame();
+
+
+/* API + HTML */
+
+async function getPost() {
+
+    const response = await fetch(
+        "https://jsonplaceholder.typicode.com/todos/1"
+    );
+
+    const data = await response.json();
+
+    result.textContent = data.title;
+}
+
+getPost();
