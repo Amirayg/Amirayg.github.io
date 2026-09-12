@@ -246,12 +246,23 @@ async function getHeroes() {
 
             const heroName = document.createElement("p");
 
-            const roles = hero.roles.join(", ");
-
             heroName.textContent =
-                `${hero.localized_name} - ${getAttribute(hero.primary_attr)} - ${roles}`;
+                `${hero.localized_name} - ${getAttribute(hero.primary_attr)} - ${hero.roles.join(", ")}`;
 
             apiData.appendChild(heroName);
+
+
+            /* Hero Image */
+
+            const heroImage = document.createElement("img");
+
+            heroImage.src =
+                `https://cdn.cloudflare.steamstatic.com${hero.img}`;
+
+            heroImage.alt =
+                hero.localized_name;
+
+            apiData.appendChild(heroImage);
 
         });
 
