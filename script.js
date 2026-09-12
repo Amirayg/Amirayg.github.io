@@ -213,3 +213,29 @@ const allMid = heroList.every((hero) => {
 });
 
 console.log(allMid);
+
+
+/* Destructuring - Object */
+
+const { name, role, damage } = hero;
+
+console.log(name);
+console.log(role);
+console.log(damage);
+
+
+/* Destructuring - Array */
+
+const [first, second, third] = heroes;
+
+console.log(first);
+console.log(second);
+console.log(third);
+
+
+/* Destructuring - Array of Objects */
+
+const [firstHero, secondHero] = heroList;
+
+console.log(firstHero.name);
+console.log(secondHero.name);
