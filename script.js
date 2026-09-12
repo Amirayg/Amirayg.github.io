@@ -49,6 +49,8 @@ paragraphs.forEach((paragraph) => {
 
 const heroes = ["Tinker", "Invoker", "Storm Spirit"];
 
+heroes.push("Lina");
+
 console.log(heroes);
 console.log(heroes[0]);
 console.log(heroes[2]);
