@@ -4,8 +4,12 @@ const button = document.querySelector("#helloButton");
 button.addEventListener("click", function () {
     title.classList.toggle("highlight");
 });
-const newText = document.createElement("p");
+const button = document.querySelector("#helloButton");
 
-newText.textContent = "This paragraph was created with JavaScript!";
+button.addEventListener("click", function () {
+    const newText = document.createElement("p");
 
-document.body.appendChild(newText);
+    newText.textContent = "This paragraph was created with JavaScript!";
+
+    document.body.appendChild(newText);
+});
