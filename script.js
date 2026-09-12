@@ -117,3 +117,53 @@ for (const hero of heroes) {
 
     console.log(hero);
 }
+
+
+const hero = {
+    name: "Tinker",
+    role: "Mid",
+    attribute: "Intelligence",
+    stats: {
+        damage: 55,
+        armor: 4
+    }
+};
+
+console.log(hero.name);
+console.log(hero.role);
+console.log(hero.attribute);
+
+hero.role = "Support";
+
+hero.team = "Team AYG";
+
+delete hero.team;
+
+console.log(hero);
+
+console.log(hero.name);
+console.log(hero["name"]);
+
+const property = "role";
+
+console.log(hero[property]);
+
+console.log(hero.stats.damage);
+console.log(hero["stats"]["damage"]);
+
+
+/* Array of Objects */
+
+const heroList = [
+    { name: "Tinker", role: "Mid", damage: 55 },
+    { name: "Invoker", role: "Mid", damage: 60 },
+    { name: "Puck", role: "Mid", damage: 52 }
+];
+
+console.log(heroList[0].name);
+console.log(heroList[1].damage);
+
+for (const hero of heroList) {
+    console.log(hero.name);
+    console.log(hero.role);
+}
