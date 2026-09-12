@@ -246,8 +246,10 @@ async function getHeroes() {
 
             const heroName = document.createElement("p");
 
+            const roles = hero.roles.join(", ");
+
             heroName.textContent =
-                `${hero.localized_name} - ${getAttribute(hero.primary_attr)}`;
+                `${hero.localized_name} - ${getAttribute(hero.primary_attr)} - ${roles}`;
 
             apiData.appendChild(heroName);
 
