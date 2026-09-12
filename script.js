@@ -34,7 +34,7 @@ showButton.addEventListener("click", function () {
     if (name === "") {
         result.textContent = "Please enter your name!";
     } else {
-        result.innerHTML = "<strong>Hello " + name + "!</strong>";
+        result.innerHTML = `<strong>Hello ${name}!</strong>`;
         nameInput.value = "";
     }
 });
@@ -273,3 +273,14 @@ function showHeroes(...heroes) {
 }
 
 showHeroes("Tinker", "Invoker", "Puck");
+
+
+/* Template Literals */
+
+const playerName = "Amirhossein";
+const favoriteHero = "Tinker";
+const heroDamage = 55;
+
+console.log(`My name is ${playerName}.`);
+console.log(`My favorite hero is ${favoriteHero}.`);
+console.log(`${favoriteHero} has ${heroDamage + 10} damage.`);
