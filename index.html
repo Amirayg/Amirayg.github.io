@@ -1,114 +1,689 @@
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>AYG Website</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Personal website of Amirhossein Ranjbar, also known as AYG."
+    >
+
+    <title>AYG | Amirhossein Ranjbar</title>
+
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
 
-<div class="welcome">
-
-    <button id="helloButton">Click Me!</button>
-
-    <button id="addButton">Add Text</button>
-
-    <button id="removeButton">Remove Text</button>
-
-    <input id="nameInput" type="text" placeholder="Enter your name">
-
-    <button id="showButton">Show Name</button>
-
-    <p id="result"></p>
-
-    <h1>Welcome to AYG Website!</h1>
-
-    <p>Hello! My name is Amirhossein and I am learning web design.</p>
-
-</div>
+    <!-- Animated particle background -->
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
 
-<div class="about">
+    <!-- Navigation -->
+    <header class="site-header">
 
-    <h2>About Me</h2>
+        <div class="container nav-container">
 
-    <p>Hello! My name is Amirhossein Ranjbar. I am Iranian and I live in Shiraz. I was born on June 24, 2012.</p>
+            <a href="#welcome" class="logo">
+                AYG<span>.</span>
+            </a>
 
-    <p>I am interested in computers, mathematics, and programming.</p>
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-    <p>This is my first website, and I am going to make it better step by step.</p>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
 
-</div>
+                <a href="#welcome" class="nav-link active">Welcome</a>
+                <a href="#about" class="nav-link">About Me</a>
+                <a href="#skills" class="nav-link">My Skills</a>
+                <a href="#social" class="nav-link">Social Media</a>
+                <a href="#hobbies" class="nav-link">My Hobbies</a>
+                <a href="#thank-you" class="nav-link">Thank You</a>
 
+            </nav>
 
-<img src="pashmam.jpg" alt="My Image">
+        </div>
 
-
-<h2>My Skills</h2>
-
-
-<div class="skills">
-
-    <div class="skill-icdl">
-
-        <h3 class="icdl">ICDL</h3>
-
-        <p>I have strong computer skills and knowledge of common office applications.</p>
-
-    </div>
-
-
-    <div class="skill-typing">
-
-        <h3 class="typing">Fast Typing</h3>
-
-        <p>I can type 80 words per minute.</p>
-
-    </div>
+    </header>
 
 
-    <div class="skill-programming">
+    <main>
 
-        <h3 class="programming">Programming Fundamentals</h3>
+        <!-- Welcome -->
+        <section id="welcome" class="hero section">
 
-        <p>I have basic knowledge of programming and I am currently learning Python.</p>
+            <div class="container">
 
-    </div>
+                <div class="hero-card reveal">
+
+                    <div class="hero-content">
+
+                        <p class="eyebrow">
+                            WELCOME TO MY WEBSITE
+                        </p>
+
+                        <h1>
+                            Welcome to AYG Website!
+                        </h1>
+
+                        <p class="hero-description">
+                            Hello! My name is Amirhossein and I am learning web design.
+                        </p>
+
+                        <a href="#about" class="primary-button">
+                            Explore My Website
+                        </a>
+
+                    </div>
 
 
-    <div class="skill-english">
+                    <div class="hero-image-wrap">
 
-        <h3 class="english">English – Upper-Intermediate</h3>
+                        <div class="image-glow"></div>
 
-        <p>I can communicate effectively in English and understand most everyday conversations.</p>
+                        <img
+                            src="pashmam.jpg"
+                            alt="Photo of Amirhossein Ranjbar"
+                            class="profile-image"
+                            width="320"
+                            height="320"
+                        >
 
-    </div>
+                    </div>
 
-</div>
+                </div>
 
+            </div>
 
-<div class="api-section">
-
-    <h2>API Data</h2>
-
-    <div id="apiData"></div>
-
-</div>
+        </section>
 
 
-<div class="thank-you">
+        <!-- About Me -->
+        <section id="about" class="section">
 
-    <h2>Thank You!</h2>
+            <div class="container">
 
-    <p>Thank you for visiting my website.</p>
+                <div class="section-card reveal">
 
-</div>
+                    <p class="section-label">
+                        WHO I AM
+                    </p>
 
+                    <h2>
+                        About Me
+                    </h2>
+
+                    <div class="about-content">
+
+                        <p>
+                            Hi! I'm
+                            <strong>Amirhossein Ranjbar</strong>,
+                            also known as <strong>AYG</strong>, an Iranian student
+                            born on <strong>June 24, 2012</strong>.
+                            I’m passionate about technology, computers, mathematics,
+                            and programming, and I enjoy learning new things and
+                            challenging myself.
+                        </p>
+
+                        <p>
+                            I’m currently learning
+                            <strong>Python and web development</strong>,
+                            while working on personal projects to improve my
+                            programming and problem-solving skills. I’m especially
+                            interested in understanding how technology works and
+                            turning my ideas into real projects.
+                        </p>
+
+                        <p>
+                            I am a big fan of <strong>gaming</strong>, and my
+                            favorite game is <strong>Dota 2</strong>.
+                            My brother introduced me to Dota 2 when I was
+                            <strong>seven years old</strong>, and it became one
+                            of my favorite games. Interestingly, Dota 2 also played
+                            an important role in my interest in
+                            <strong>technology</strong> and helped me improve my
+                            <strong>English</strong> by exposing me to English
+                            words, phrases, and communication while playing.
+                        </p>
+
+                        <p>
+                            I am also very passionate about <strong>music</strong>.
+                            I listen to music in my free time, and my favorite
+                            artist is <strong>Eminem</strong>. Music is an important
+                            part of my interests and something I really enjoy.
+                        </p>
+
+                        <p>
+                            I enjoy playing Dota 2 competitively, especially in the
+                            <strong>Mid Lane</strong>. Gaming has also helped me
+                            develop skills such as
+                            <strong>strategic thinking, decision-making, patience,
+                            and teamwork</strong>.
+                        </p>
+
+                        <p>
+                            I would describe myself as
+                            <strong>curious, hardworking, competitive, creative,
+                            and always willing to learn.</strong>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skills -->
+        <section id="skills" class="section">
+
+            <div class="container">
+
+                <div class="section-card reveal">
+
+                    <p class="section-label">
+                        WHAT I CAN DO
+                    </p>
+
+                    <h2>
+                        My Skills
+                    </h2>
+
+
+                    <div class="skills-grid">
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                💻
+                            </div>
+
+                            <h3>
+                                Computer Skills
+                            </h3>
+
+                            <p>
+                                I have strong computer skills and good knowledge
+                                of working with Windows, software, files, and
+                                everyday computer tools.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                🌐
+                            </div>
+
+                            <h3>
+                                Web Development
+                            </h3>
+
+                            <p>
+                                I am learning HTML and CSS and currently building
+                                my own websites to improve my web development skills.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                🐍
+                            </div>
+
+                            <h3>
+                                Python Programming
+                            </h3>
+
+                            <p>
+                                I am currently learning Python and practicing
+                                programming through small projects and
+                                problem-solving.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                🧠
+                            </div>
+
+                            <h3>
+                                Problem Solving
+                            </h3>
+
+                            <p>
+                                I enjoy solving challenging problems and finding
+                                different ways to reach a solution.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                ⌨️
+                            </div>
+
+                            <h3>
+                                Fast Typing
+                            </h3>
+
+                            <p>
+                                I can type at around
+                                <strong>80 words per minute</strong>,
+                                allowing me to work quickly and efficiently.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                🇬🇧
+                            </div>
+
+                            <h3>
+                                English
+                            </h3>
+
+                            <p>
+                                I have
+                                <strong>Upper-Intermediate English skills</strong>
+                                and continue improving my vocabulary, reading,
+                                and communication.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                🎮
+                            </div>
+
+                            <h3>
+                                Gaming & Strategy
+                            </h3>
+
+                            <p>
+                                As a competitive Dota 2 player, I have developed
+                                skills in strategic thinking, decision-making,
+                                teamwork, and staying focused under pressure.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                📚
+                            </div>
+
+                            <h3>
+                                Mathematics
+                            </h3>
+
+                            <p>
+                                I have a strong interest in mathematics and enjoy
+                                logical thinking, calculations, and solving
+                                mathematical problems.
+                            </p>
+
+                        </article>
+
+
+                        <article class="skill-card">
+
+                            <div class="card-icon">
+                                🚀
+                            </div>
+
+                            <h3>
+                                Learning & Self-Improvement
+                            </h3>
+
+                            <p>
+                                I am always interested in learning new technologies,
+                                improving my skills, and challenging myself with
+                                new projects.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Social Media -->
+        <section id="social" class="section">
+
+            <div class="container">
+
+                <div class="section-card reveal">
+
+                    <p class="section-label">
+                        FIND ME ONLINE
+                    </p>
+
+                    <h2>
+                        My Social Media
+                    </h2>
+
+
+                    <div class="social-grid">
+
+                        <a
+                            href="https://github.com/Amirayg"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+                                💻
+                            </div>
+
+                            <div>
+                                <h3>GitHub</h3>
+                                <p>My coding projects and repositories.</p>
+                            </div>
+
+                            <span class="social-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="mailto:amirayg1@gmail.com"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+                                📧
+                            </div>
+
+                            <div>
+                                <h3>Email</h3>
+                                <p>Contact me by email.</p>
+                            </div>
+
+                            <span class="social-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="https://t.me/Amirayg1891"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+                                ✈️
+                            </div>
+
+                            <div>
+                                <h3>Telegram</h3>
+                                <p>Connect with me on Telegram.</p>
+                            </div>
+
+                            <span class="social-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="https://open.spotify.com/playlist/1TkIDehsMQZiQfKzeykeo0"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-card"
+                        >
+
+                            <div class="social-icon">
+                                🎵
+                            </div>
+
+                            <div>
+                                <h3>Spotify</h3>
+                                <p>Listen to my favorite music.</p>
+                            </div>
+
+                            <span class="social-arrow">
+                                →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Hobbies -->
+        <section id="hobbies" class="section">
+
+            <div class="container">
+
+                <div class="section-card reveal">
+
+                    <p class="section-label">
+                        THINGS I ENJOY
+                    </p>
+
+                    <h2>
+                        My Hobbies
+                    </h2>
+
+
+                    <div class="hobbies-grid">
+
+                        <article class="hobby-card">
+
+                            <div class="card-icon">
+                                🎮
+                            </div>
+
+                            <h3>
+                                Gaming
+                            </h3>
+
+                            <p>
+                                I enjoy playing video games in my free time,
+                                and my favorite game is <strong>Dota 2</strong>.
+                                I mainly play <strong>Mid Lane</strong>, and some
+                                of my favorite heroes are
+                                <strong>Tinker, Invoker, Lina, Storm Spirit,
+                                Ember Spirit, Puck, Pangolier, and Void Spirit</strong>.
+                                I enjoy the strategic and competitive side of
+                                Dota 2, especially making decisions during
+                                difficult situations, adapting to different
+                                opponents, and trying to improve with every game.
+                                Gaming is not only a way for me to have fun,
+                                but also something that has helped me develop
+                                skills like strategic thinking, decision-making,
+                                patience, and teamwork.
+                            </p>
+
+                        </article>
+
+
+                        <article class="hobby-card">
+
+                            <div class="card-icon">
+                                🎵
+                            </div>
+
+                            <h3>
+                                Music
+                            </h3>
+
+                            <p>
+                                I listen to music almost every day, whether I’m
+                                relaxing, studying, working on my projects, or
+                                just spending some free time. Music is something
+                                I always enjoy having around, and I like exploring
+                                different songs and artists. I usually listen to
+                                Eminem, but I also enjoy discovering new music
+                                and adding my favorite songs to my playlists.
+                            </p>
+
+                        </article>
+
+
+                        <article class="hobby-card">
+
+                            <div class="card-icon">
+                                💻
+                            </div>
+
+                            <h3>
+                                Programming
+                            </h3>
+
+                            <p>
+                                Programming is one of my favorite hobbies because
+                                I enjoy creating things and solving problems with
+                                code. I am currently learning Python and web
+                                development, and I like working on personal
+                                projects to improve my skills.
+                            </p>
+
+                        </article>
+
+
+                        <article class="hobby-card">
+
+                            <div class="card-icon">
+                                🧠
+                            </div>
+
+                            <h3>
+                                Mathematics & Problem Solving
+                            </h3>
+
+                            <p>
+                                I enjoy mathematics and challenging problems.
+                                I like using logical thinking to find solutions,
+                                understand different concepts, and challenge
+                                myself with problems that require creativity
+                                and careful thinking.
+                            </p>
+
+                        </article>
+
+
+                        <article class="hobby-card">
+
+                            <div class="card-icon">
+                                🌐
+                            </div>
+
+                            <h3>
+                                Technology
+                            </h3>
+
+                            <p>
+                                I am very interested in technology and computers.
+                                I enjoy exploring new technologies, learning how
+                                they work, and discovering new things about the
+                                digital world. I also like keeping up with the
+                                tools and technologies that can help me learn
+                                and create new projects.
+                            </p>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Thank You -->
+        <section id="thank-you" class="section thank-you-section">
+
+            <div class="container">
+
+                <div class="thank-you-card reveal">
+
+                    <div class="thank-you-icon">
+                        ✦
+                    </div>
+
+                    <h2>
+                        Thank You!
+                    </h2>
+
+                    <p>
+                        Thank you for visiting my website.
+                    </p>
+
+                    <a href="#welcome" class="primary-button">
+                        Back to Top
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <p>
+            © <span id="year"></span> AYG | Amirhossein Ranjbar
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
-```
