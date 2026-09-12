@@ -13,6 +13,8 @@ removeButton.addEventListener("click", function () {
     if (newText) {
         newText.remove();
     }
+});
+
 const nameInput = document.querySelector("#nameInput");
 const showButton = document.querySelector("#showButton");
 const result = document.querySelector("#result");
