@@ -420,42 +420,43 @@ async function startGame() {
 startGame();
 
 
-/* API + HTML */
-
-async function getPost() {
-
-    const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos/1"
-    );
-
-    const data = await response.json();
-
-    result.textContent = data.title;
-}
-
-getPost();
-
-
-/* Multiple API Data */
+/* API + Loading + Error Handling */
 
 const apiData = document.querySelector("#apiData");
 
 async function getTodos() {
 
-    const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos"
-    );
+    apiData.textContent = "Loading...";
 
-    const data = await response.json();
+    try {
 
-    data.slice(0, 10).forEach((todo) => {
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos"
+        );
 
-        const item = document.createElement("p");
+        if (!response.ok) {
+            throw new Error("Failed to fetch data.");
+        }
 
-        item.textContent = todo.title;
+        const data = await response.json();
 
-        apiData.appendChild(item);
-    });
+        apiData.textContent = "";
+
+        data.slice(0, 10).forEach((todo) => {
+
+            const item = document.createElement("p");
+
+            item.textContent = todo.title;
+
+            apiData.appendChild(item);
+        });
+
+    } catch (error) {
+
+        apiData.textContent = "Failed to load data.";
+
+        console.log(error);
+    }
 }
 
 getTodos();
