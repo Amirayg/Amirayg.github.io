@@ -420,34 +420,175 @@ async function startGame() {
 startGame();
 
 
-/* Real API */
+/* API - GET */
 
 const apiData = document.querySelector("#apiData");
 
-async function getPokemon() {
+async function getTodo() {
 
     apiData.textContent = "Loading...";
 
     try {
 
         const response = await fetch(
-            "https://pokeapi.co/api/v2/pokemon/pikachu"
+            "https://jsonplaceholder.typicode.com/todos/5"
         );
 
         if (!response.ok) {
-            throw new Error("Failed to fetch Pokémon data.");
+            throw new Error("Failed to fetch data.");
         }
 
         const data = await response.json();
 
-        apiData.textContent = data.name;
+        apiData.textContent = data.title;
 
     } catch (error) {
 
-        apiData.textContent = "Failed to load Pokémon.";
+        apiData.textContent = "Failed to load data.";
 
         console.log(error);
     }
 }
 
-getPokemon();
+getTodo();
+
+
+/* API - POST */
+
+async function createTodo() {
+
+    const newTodo = {
+        title: "Learn JavaScript API",
+        completed: false,
+        userId: 1
+    };
+
+    try {
+
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(newTodo)
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to create todo.");
+        }
+
+        const data = await response.json();
+
+        console.log("Created Todo:", data);
+
+    } catch (error) {
+
+        console.log(error);
+    }
+}
+
+createTodo();
+
+
+/* API - PUT */
+
+async function updateTodo() {
+
+    const updatedTodo = {
+        id: 5,
+        title: "Tinker is learning API",
+        completed: true,
+        userId: 1
+    };
+
+    try {
+
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/5",
+            {
+                method: "PUT",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(updatedTodo)
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to update todo.");
+        }
+
+        const data = await response.json();
+
+        console.log("Updated Todo:", data);
+
+    } catch (error) {
+
+        console.log(error);
+    }
+}
+
+updateTodo();
+
+
+/* API - DELETE */
+
+async function deleteTodo() {
+
+    try {
+
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/todos/5",
+            {
+                method: "DELETE"
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to delete todo.");
+        }
+
+        console.log("Todo deleted successfully.");
+
+    } catch (error) {
+
+        console.log(error);
+    }
+}
+
+deleteTodo();
+
+
+/* OpenDota API - Test */
+
+async function getDotaData() {
+
+    try {
+
+        const response = await fetch(
+            "https://api.opendota.com/api/heroes"
+        );
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch Dota data.");
+        }
+
+        const data = await response.json();
+
+        console.log("OpenDota Data:");
+        console.log(data);
+
+    } catch (error) {
+
+        console.log("OpenDota Error:", error);
+    }
+}
+
+getDotaData();
