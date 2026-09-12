@@ -1,23 +1,9 @@
-console.log("Hello from JavaScript!");
-console.log("AYG");
-console.log(14);
-console.log(20 + 10);
-let hero = "Invoker";
-let games = 200;
+let rank = "Ancient";
 
-const player = "Topson";
-
-console.log(hero);
-console.log(games);
-console.log(player);
-
-games = 250;
-
-console.log(games);
-let hero = "Invoker";
-let games = 200;
-let isMidPlayer = true;
-
-console.log(typeof hero);
-console.log(typeof games);
-console.log(typeof isMidPlayer);
+if (rank === "Immortal") {
+    console.log("You are Immortal!");
+} else if (rank === "Ancient") {
+    console.log("You are Ancient!");
+} else {
+    console.log("Keep playing!");
+}
