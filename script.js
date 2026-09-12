@@ -420,18 +420,18 @@ async function startGame() {
 startGame();
 
 
-/* API + Loading + Error Handling */
+/* API - Loading + Error Handling + Endpoint */
 
 const apiData = document.querySelector("#apiData");
 
-async function getTodos() {
+async function getTodo() {
 
     apiData.textContent = "Loading...";
 
     try {
 
         const response = await fetch(
-            "https://jsonplaceholder.typicode.com/todos"
+            "https://jsonplaceholder.typicode.com/todos/5"
         );
 
         if (!response.ok) {
@@ -440,16 +440,7 @@ async function getTodos() {
 
         const data = await response.json();
 
-        apiData.textContent = "";
-
-        data.slice(0, 10).forEach((todo) => {
-
-            const item = document.createElement("p");
-
-            item.textContent = todo.title;
-
-            apiData.appendChild(item);
-        });
+        apiData.textContent = data.title;
 
     } catch (error) {
 
@@ -459,4 +450,4 @@ async function getTodos() {
     }
 }
 
-getTodos();
+getTodo();
