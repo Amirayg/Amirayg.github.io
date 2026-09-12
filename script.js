@@ -122,6 +122,26 @@ console.log(heroes.length);
 
 
 /* =========================
+   concat()
+========================= */
+
+const midHeroes = [
+    "Tinker",
+    "Invoker"
+];
+
+const moreHeroes = [
+    "Storm Spirit",
+    "Lina"
+];
+
+const allHeroes = midHeroes.concat(moreHeroes);
+
+console.log("All Heroes:");
+console.log(allHeroes);
+
+
+/* =========================
    join()
 ========================= */
 
@@ -371,7 +391,8 @@ async function getHeroStats() {
         filteredStats.forEach((hero) => {
 
             const winRate =
-                (hero["6_win"] / hero["6_pick"] * 100)
+                (hero["6_win"] /
+                hero["6_pick"] * 100)
                 .toFixed(2);
 
 
@@ -410,13 +431,9 @@ async function getHeroStats() {
 
 
             heroCard.appendChild(heroName);
-
             heroCard.appendChild(heroAttribute);
-
             heroCard.appendChild(heroRoles);
-
             heroCard.appendChild(heroWinRate);
-
 
             apiData.appendChild(heroCard);
 
@@ -480,7 +497,7 @@ async function getHeroStats() {
 
 
         /* =========================
-           slice()
+           Top 3
         ========================= */
 
         const top3Heroes =
@@ -488,6 +505,40 @@ async function getHeroStats() {
 
         console.log("Top 3 Heroes:");
         console.log(top3Heroes);
+
+
+        /* =========================
+           Display Top 3
+        ========================= */
+
+        const top3Title =
+            document.createElement("h2");
+
+        top3Title.textContent =
+            "Top 3 Heroes";
+
+        apiData.prepend(top3Title);
+
+
+        top3Heroes.forEach((hero, index) => {
+
+            const winRate =
+                (hero["6_win"] /
+                hero["6_pick"] * 100)
+                .toFixed(2);
+
+
+            const topHero =
+                document.createElement("p");
+
+
+            topHero.textContent =
+                `${index + 1}. ${hero.localized_name} - ${winRate}%`;
+
+
+            apiData.prepend(topHero);
+
+        });
 
 
         /* =========================
@@ -504,6 +555,66 @@ async function getHeroStats() {
         console.log(
             `Top 3: ${top3Names.join(", ")}`
         );
+
+
+        /* =========================
+           find()
+        ========================= */
+
+        const tinker =
+            filteredStats.find((hero) => {
+
+                return hero.localized_name === "Tinker";
+
+            });
+
+        console.log("Tinker:");
+        console.log(tinker);
+
+
+        /* =========================
+           findIndex()
+        ========================= */
+
+        const tinkerIndex =
+            filteredStats.findIndex((hero) => {
+
+                return hero.localized_name === "Tinker";
+
+            });
+
+        console.log("Tinker Index:");
+        console.log(tinkerIndex);
+
+
+        /* =========================
+           some()
+        ========================= */
+
+        const hasTinker =
+            filteredStats.some((hero) => {
+
+                return hero.localized_name === "Tinker";
+
+            });
+
+        console.log("Does list contain Tinker?");
+        console.log(hasTinker);
+
+
+        /* =========================
+           every()
+        ========================= */
+
+        const allHeroesHaveStats =
+            filteredStats.every((hero) => {
+
+                return hero["6_pick"] > 0;
+
+            });
+
+        console.log("Do all heroes have Ancient stats?");
+        console.log(allHeroesHaveStats);
 
 
         /* =========================
