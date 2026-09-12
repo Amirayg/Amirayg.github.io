@@ -198,8 +198,6 @@ async function getHeroes() {
             "https://api.opendota.com/api/heroes"
         );
 
-        console.log("Response:", response);
-
         if (!response.ok) {
             throw new Error(
                 `API Error: ${response.status}`
@@ -211,10 +209,6 @@ async function getHeroes() {
         console.log("OpenDota Data:");
         console.log(data);
 
-
-        /* =========================
-           My Favorite Heroes
-        ========================= */
 
         const myHeroes = [
             "Tinker",
@@ -229,20 +223,12 @@ async function getHeroes() {
         ];
 
 
-        /* =========================
-           Filter My Heroes
-        ========================= */
-
         const filteredHeroes = data.filter((hero) => {
 
             return myHeroes.includes(hero.localized_name);
 
         });
 
-
-        /* =========================
-           Display Heroes
-        ========================= */
 
         apiData.innerHTML = "";
 
@@ -295,4 +281,203 @@ function getAttribute(attribute) {
 }
 
 
+/* =========================
+   Hero Stats API
+========================= */
+
+async function getHeroStats() {
+
+    try {
+
+        const response = await fetch(
+            "https://api.opendota.com/api/heroStats"
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Stats API Error: ${response.status}`
+            );
+        }
+
+        const stats = await response.json();
+
+        console.log("Hero Stats:");
+        console.log(stats);
+
+
+        const myHeroes = [
+            "Tinker",
+            "Shadow Fiend",
+            "Storm Spirit",
+            "Void Spirit",
+            "Earth Spirit",
+            "Ember Spirit",
+            "Lina",
+            "Invoker",
+            "Monkey King"
+        ];
+
+
+        const filteredStats = stats.filter((hero) => {
+
+            return myHeroes.includes(hero.localized_name);
+
+        });
+
+
+        /* =========================
+           Sort by Win Rate
+        ========================= */
+
+        filteredStats.sort((a, b) => {
+
+            const winRateA =
+                a.wins / a.games;
+
+            const winRateB =
+                b.wins / b.games;
+
+            return winRateB - winRateA;
+
+        });
+
+
+        /* =========================
+           Display Hero Cards
+        ========================= */
+
+        apiData.innerHTML = "";
+
+        filteredStats.forEach((hero) => {
+
+            const winRate =
+                (hero.wins / hero.games * 100).toFixed(2);
+
+
+            /* Card */
+
+            const heroCard =
+                document.createElement("div");
+
+            heroCard.classList.add("hero-card");
+
+
+            /* Hero Name */
+
+            const heroName =
+                document.createElement("h3");
+
+            heroName.textContent =
+                hero.localized_name;
+
+
+            /* Attribute */
+
+            const heroAttribute =
+                document.createElement("p");
+
+            heroAttribute.textContent =
+                `Attribute: ${getAttribute(hero.primary_attr)}`;
+
+
+            /* Roles */
+
+            const heroRoles =
+                document.createElement("p");
+
+            heroRoles.textContent =
+                `Roles: ${hero.roles.join(", ")}`;
+
+
+            /* Win Rate */
+
+            const heroWinRate =
+                document.createElement("p");
+
+            heroWinRate.textContent =
+                `Win Rate: ${winRate}%`;
+
+
+            /* Add elements to card */
+
+            heroCard.appendChild(heroName);
+
+            heroCard.appendChild(heroAttribute);
+
+            heroCard.appendChild(heroRoles);
+
+            heroCard.appendChild(heroWinRate);
+
+
+            /* Add card to page */
+
+            apiData.appendChild(heroCard);
+
+        });
+
+
+        /* =========================
+           map()
+        ========================= */
+
+        const heroNames = filteredStats.map((hero) => {
+
+            return hero.localized_name;
+
+        });
+
+        console.log("Hero Names:");
+        console.log(heroNames);
+
+
+        /* =========================
+           map() + Win Rate
+        ========================= */
+
+        const heroInfo = filteredStats.map((hero) => {
+
+            const winRate =
+                (hero.wins / hero.games * 100).toFixed(2);
+
+            return `${hero.localized_name} - Win Rate: ${winRate}%`;
+
+        });
+
+        console.log("Hero Info:");
+        console.log(heroInfo);
+
+
+        /* =========================
+           reduce()
+        ========================= */
+
+        const averageWinRate =
+            filteredStats.reduce((total, hero) => {
+
+                const winRate =
+                    hero.wins / hero.games * 100;
+
+                return total + winRate;
+
+            }, 0) / filteredStats.length;
+
+
+        console.log(
+            `Average Win Rate: ${averageWinRate.toFixed(2)}%`
+        );
+
+
+        console.log("Sorted Heroes:");
+        console.log(filteredStats);
+
+    } catch (error) {
+
+        console.log("Stats Error:", error);
+
+    }
+
+}
+
+
 getHeroes();
+getHeroStats();
