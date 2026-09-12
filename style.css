@@ -43,10 +43,11 @@ p {
     padding: 1rem;
     border-radius: 0.2rem;
     border: 0.6rem solid #4f86c6;
-    width: 70%;
-    max-width: 700px;
+    width: 78%;
+    max-width: 780px;
     min-height: 100px;
     height: auto;
+    overflow-wrap: break-word;
 }
 
 /* About */
@@ -153,15 +154,17 @@ h2 {
         font-size: 1rem;
     }
 
-    .about h2 {
-        width: 100%;
-        font-size: 1.5rem;
-    }
-
     p {
         font-size: 1rem;
         width: 100%;
+        max-width: 100%;
         min-height: 0;
+        overflow-wrap: break-word;
+    }
+
+    .about h2 {
+        width: 100%;
+        font-size: 1.5rem;
     }
 
     .skills {
