@@ -38,3 +38,8 @@ showButton.addEventListener("click", function () {
         nameInput.value = "";
     }
 });
+
+
+const paragraphs = document.querySelectorAll("p");
+
+console.log(paragraphs);
