@@ -252,15 +252,21 @@ async function getHeroes() {
             apiData.appendChild(heroName);
 
 
-            /* Hero Image */
+            /* =========================
+               Hero Image
+            ========================= */
 
             const heroImage = document.createElement("img");
 
-            heroImage.src =
-                `https://cdn.cloudflare.steamstatic.com${hero.img}`;
+            const imageName = hero.img
+                .split("/")
+                .pop()
+                .split(".")[0];
 
-            heroImage.alt =
-                hero.localized_name;
+            heroImage.src =
+                `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${imageName}.png`;
+
+            heroImage.alt = hero.localized_name;
 
             heroImage.width = 300;
 
