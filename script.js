@@ -34,7 +34,7 @@ showButton.addEventListener("click", function () {
     if (name === "") {
         result.textContent = "Please enter your name!";
     } else {
-        result.textContent = "Hello " + name + "!";
+        result.innerHTML = "<strong>Hello " + name + "!</strong>";
         nameInput.value = "";
     }
 });
