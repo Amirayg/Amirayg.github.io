@@ -45,3 +45,10 @@ const paragraphs = document.querySelectorAll("p");
 paragraphs.forEach((paragraph) => {
     paragraph.style.color = "blue";
 });
+
+
+const heroes = ["Tinker", "Invoker", "Storm Spirit"];
+
+console.log(heroes);
+console.log(heroes[0]);
+console.log(heroes[2]);
