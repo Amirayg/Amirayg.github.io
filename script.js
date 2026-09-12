@@ -14,3 +14,10 @@ console.log(player);
 games = 250;
 
 console.log(games);
+let hero = "Invoker";
+let games = 200;
+let isMidPlayer = true;
+
+console.log(typeof hero);
+console.log(typeof games);
+console.log(typeof isMidPlayer);
