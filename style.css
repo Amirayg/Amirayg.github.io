@@ -28,12 +28,12 @@ body {
 /* Welcome Text */
 
 .welcome p {
-    width: 100%;
-    max-width: none;
+    width: 90%;
+    max-width: 700px;
     margin: 1rem 0 0;
 }
 
-/* Text */
+/* General Text */
 
 p {
     color: #222;
@@ -43,11 +43,10 @@ p {
     padding: 1rem;
     border-radius: 0.2rem;
     border: 0.6rem solid #4f86c6;
-    width: 78%;
-    max-width: 780px;
+    width: 75%;
+    max-width: 750px;
     min-height: 100px;
     height: auto;
-    overflow-wrap: break-word;
 }
 
 /* About */
@@ -112,8 +111,8 @@ img {
 .skill-typing p,
 .skill-programming p,
 .skill-english p {
-    width: 100%;
-    max-width: none;
+    width: 90%;
+    max-width: 500px;
     min-height: 130px;
     height: auto;
 }
@@ -149,7 +148,7 @@ h2 {
 
     .welcome p {
         width: 100%;
-        max-width: none;
+        max-width: 100%;
         margin: 1rem 0 0;
         font-size: 1rem;
     }
@@ -157,9 +156,7 @@ h2 {
     p {
         font-size: 1rem;
         width: 100%;
-        max-width: 100%;
         min-height: 0;
-        overflow-wrap: break-word;
     }
 
     .about h2 {
@@ -184,6 +181,8 @@ h2 {
     .skill-typing p,
     .skill-programming p,
     .skill-english p {
+        width: 100%;
+        max-width: 100%;
         min-height: 0;
     }
 }
