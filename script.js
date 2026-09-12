@@ -238,7 +238,8 @@ async function getHeroes() {
 
             const heroName = document.createElement("p");
 
-            heroName.textContent = hero.localized_name;
+            heroName.textContent =
+                `${hero.localized_name} - ${getAttribute(hero.primary_attr)}`;
 
             apiData.appendChild(heroName);
 
@@ -253,6 +254,30 @@ async function getHeroes() {
             "Failed to load Dota 2 data.";
 
     }
+
 }
+
+
+/* =========================
+   Get Hero Attribute
+========================= */
+
+function getAttribute(attribute) {
+
+    if (attribute === 1) {
+        return "Strength";
+    }
+
+    if (attribute === 2) {
+        return "Agility";
+    }
+
+    if (attribute === 3) {
+        return "Intelligence";
+    }
+
+    return "Unknown";
+}
+
 
 getHeroes();
