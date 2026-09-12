@@ -140,19 +140,16 @@ h2 {
 @media (max-width: 600px) {
 
     body {
-        padding: 0.3rem;
+        padding: 0.6rem;
     }
 
     .welcome {
-        width: 100%;
-        margin: 0 0 2rem 0;
-        padding: 0.5rem;
-        border: 0.4rem solid #2e8b57;
         font-size: 1.4rem;
+        padding: 0.7rem;
     }
 
     .welcome p {
-        width: 100%;
+        width: auto;
         max-width: 100%;
         margin: 1rem 0 0;
         padding: 0.5rem;
