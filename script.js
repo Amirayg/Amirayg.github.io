@@ -198,8 +198,12 @@ async function getHeroes() {
             "https://api.opendota.com/api/heroes"
         );
 
+        console.log("Response:", response);
+
         if (!response.ok) {
-            throw new Error("Failed to fetch Dota data.");
+            throw new Error(
+                `API Error: ${response.status}`
+            );
         }
 
         const data = await response.json();
@@ -251,33 +255,11 @@ async function getHeroes() {
 
             apiData.appendChild(heroName);
 
-
-            /* =========================
-               Hero Image
-            ========================= */
-
-            const heroImage = document.createElement("img");
-
-            const imageName = hero.img
-                .split("/")
-                .pop()
-                .split(".")[0];
-
-            heroImage.src =
-                `https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${imageName}.png`;
-
-            heroImage.alt = hero.localized_name;
-
-            heroImage.width = 300;
-
-            apiData.appendChild(heroImage);
-
         });
-
 
     } catch (error) {
 
-        console.log("Error:", error);
+        console.log("FULL ERROR:", error);
 
         apiData.textContent =
             "Failed to load Dota 2 data.";
