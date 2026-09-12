@@ -1,5 +1,6 @@
 const button = document.querySelector("#helloButton");
+const title = document.querySelector("h1");
 
 button.addEventListener("click", function () {
-    console.log("AYG button clicked!");
+    title.textContent = "Welcome to Interactive AYG!";
 });
