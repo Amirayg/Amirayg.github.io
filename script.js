@@ -122,6 +122,21 @@ console.log(heroes.length);
 
 
 /* =========================
+   join()
+========================= */
+
+const roles = [
+    "Nuker",
+    "Pusher",
+    "Escape"
+];
+
+const rolesText = roles.join(", ");
+
+console.log(rolesText);
+
+
+/* =========================
    Object
 ========================= */
 
@@ -234,7 +249,8 @@ async function getHeroes() {
 
         filteredHeroes.forEach((hero) => {
 
-            const heroName = document.createElement("p");
+            const heroName =
+                document.createElement("p");
 
             heroName.textContent =
                 `${hero.localized_name} - ${getAttribute(hero.primary_attr)} - ${hero.roles.join(", ")}`;
@@ -318,6 +334,10 @@ async function getHeroStats() {
         ];
 
 
+        /* =========================
+           Filter Favorite Heroes
+        ========================= */
+
         const filteredStats = stats.filter((hero) => {
 
             return myHeroes.includes(hero.localized_name);
@@ -326,16 +346,16 @@ async function getHeroStats() {
 
 
         /* =========================
-           Sort by Win Rate
+           Sort by Ancient Win Rate
         ========================= */
 
         filteredStats.sort((a, b) => {
 
             const winRateA =
-                a.wins / a.games;
+                a["6_win"] / a["6_pick"];
 
             const winRateB =
-                b.wins / b.games;
+                b["6_win"] / b["6_pick"];
 
             return winRateB - winRateA;
 
@@ -351,18 +371,15 @@ async function getHeroStats() {
         filteredStats.forEach((hero) => {
 
             const winRate =
-                (hero.wins / hero.games * 100).toFixed(2);
+                (hero["6_win"] / hero["6_pick"] * 100)
+                .toFixed(2);
 
-
-            /* Card */
 
             const heroCard =
                 document.createElement("div");
 
             heroCard.classList.add("hero-card");
 
-
-            /* Hero Name */
 
             const heroName =
                 document.createElement("h3");
@@ -371,16 +388,12 @@ async function getHeroStats() {
                 hero.localized_name;
 
 
-            /* Attribute */
-
             const heroAttribute =
                 document.createElement("p");
 
             heroAttribute.textContent =
                 `Attribute: ${getAttribute(hero.primary_attr)}`;
 
-
-            /* Roles */
 
             const heroRoles =
                 document.createElement("p");
@@ -389,16 +402,12 @@ async function getHeroStats() {
                 `Roles: ${hero.roles.join(", ")}`;
 
 
-            /* Win Rate */
-
             const heroWinRate =
                 document.createElement("p");
 
             heroWinRate.textContent =
-                `Win Rate: ${winRate}%`;
+                `Ancient Win Rate: ${winRate}%`;
 
-
-            /* Add elements to card */
 
             heroCard.appendChild(heroName);
 
@@ -409,8 +418,6 @@ async function getHeroStats() {
             heroCard.appendChild(heroWinRate);
 
 
-            /* Add card to page */
-
             apiData.appendChild(heroCard);
 
         });
@@ -420,11 +427,12 @@ async function getHeroStats() {
            map()
         ========================= */
 
-        const heroNames = filteredStats.map((hero) => {
+        const heroNames =
+            filteredStats.map((hero) => {
 
-            return hero.localized_name;
+                return hero.localized_name;
 
-        });
+            });
 
         console.log("Hero Names:");
         console.log(heroNames);
@@ -434,14 +442,17 @@ async function getHeroStats() {
            map() + Win Rate
         ========================= */
 
-        const heroInfo = filteredStats.map((hero) => {
+        const heroInfo =
+            filteredStats.map((hero) => {
 
-            const winRate =
-                (hero.wins / hero.games * 100).toFixed(2);
+                const winRate =
+                    (hero["6_win"] /
+                    hero["6_pick"] * 100)
+                    .toFixed(2);
 
-            return `${hero.localized_name} - Win Rate: ${winRate}%`;
+                return `${hero.localized_name} - Ancient Win Rate: ${winRate}%`;
 
-        });
+            });
 
         console.log("Hero Info:");
         console.log(heroInfo);
@@ -455,7 +466,8 @@ async function getHeroStats() {
             filteredStats.reduce((total, hero) => {
 
                 const winRate =
-                    hero.wins / hero.games * 100;
+                    hero["6_win"] /
+                    hero["6_pick"] * 100;
 
                 return total + winRate;
 
@@ -463,9 +475,40 @@ async function getHeroStats() {
 
 
         console.log(
-            `Average Win Rate: ${averageWinRate.toFixed(2)}%`
+            `Average Ancient Win Rate: ${averageWinRate.toFixed(2)}%`
         );
 
+
+        /* =========================
+           slice()
+        ========================= */
+
+        const top3Heroes =
+            filteredStats.slice(0, 3);
+
+        console.log("Top 3 Heroes:");
+        console.log(top3Heroes);
+
+
+        /* =========================
+           join()
+        ========================= */
+
+        const top3Names =
+            top3Heroes.map((hero) => {
+
+                return hero.localized_name;
+
+            });
+
+        console.log(
+            `Top 3: ${top3Names.join(", ")}`
+        );
+
+
+        /* =========================
+           Sorted Heroes
+        ========================= */
 
         console.log("Sorted Heroes:");
         console.log(filteredStats);
