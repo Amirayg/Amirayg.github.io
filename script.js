@@ -14,3 +14,11 @@ removeButton.addEventListener("click", function () {
         newText.remove();
     }
 });
+const nameInput = document.querySelector("#nameInput");
+const showButton = document.querySelector("#showButton");
+
+showButton.addEventListener("click", function () {
+    const name = nameInput.value;
+
+    console.log(name);
+});
