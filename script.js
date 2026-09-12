@@ -262,6 +262,8 @@ async function getHeroes() {
             heroImage.alt =
                 hero.localized_name;
 
+            heroImage.width = 300;
+
             apiData.appendChild(heroImage);
 
         });
