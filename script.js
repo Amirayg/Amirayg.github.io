@@ -239,3 +239,37 @@ const [firstHero, secondHero] = heroList;
 
 console.log(firstHero.name);
 console.log(secondHero.name);
+
+
+/* Spread - Array */
+
+const heroes1 = ["Tinker", "Invoker"];
+const heroes2 = ["Puck", "Lina"];
+
+const allHeroes = [...heroes1, ...heroes2];
+
+console.log(allHeroes);
+
+
+/* Spread - Object */
+
+const basicHero = {
+    name: "Tinker",
+    role: "Mid"
+};
+
+const fullHero = {
+    ...basicHero,
+    damage: 55
+};
+
+console.log(fullHero);
+
+
+/* Rest */
+
+function showHeroes(...heroes) {
+    console.log(heroes);
+}
+
+showHeroes("Tinker", "Invoker", "Puck");
