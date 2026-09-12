@@ -42,4 +42,6 @@ showButton.addEventListener("click", function () {
 
 const paragraphs = document.querySelectorAll("p");
 
-console.log(paragraphs);
+paragraphs.forEach((paragraph) => {
+    paragraph.style.color = "blue";
+});
