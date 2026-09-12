@@ -208,7 +208,9 @@ async function getHeroes() {
         console.log(data);
 
 
-        /* My Favorite Heroes */
+        /* =========================
+           My Favorite Heroes
+        ========================= */
 
         const myHeroes = [
             "Tinker",
@@ -223,14 +225,20 @@ async function getHeroes() {
         ];
 
 
-        /* Filter My Heroes */
+        /* =========================
+           Filter My Heroes
+        ========================= */
 
         const filteredHeroes = data.filter((hero) => {
+
             return myHeroes.includes(hero.localized_name);
+
         });
 
 
-        /* Display Heroes */
+        /* =========================
+           Display Heroes
+        ========================= */
 
         apiData.innerHTML = "";
 
@@ -264,16 +272,20 @@ async function getHeroes() {
 
 function getAttribute(attribute) {
 
-    if (attribute === 1) {
+    if (attribute === "str") {
         return "Strength";
     }
 
-    if (attribute === 2) {
+    if (attribute === "agi") {
         return "Agility";
     }
 
-    if (attribute === 3) {
+    if (attribute === "int") {
         return "Intelligence";
+    }
+
+    if (attribute === "all") {
+        return "Universal";
     }
 
     return "Unknown";
