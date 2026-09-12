@@ -190,5 +190,9 @@ h2 {
         max-width: 100%;
         min-height: 0;
     }
+    .highlight {
+    color: red;
+    background-color: yellow;
+}
 }
 
