@@ -28,9 +28,10 @@ body {
 /* Welcome Text */
 
 .welcome p {
-    width: 90%;
-    max-width: 700px;
+    width: auto;
+    max-width: 100%;
     margin: 1rem 0 0;
+    overflow-wrap: anywhere;
 }
 
 /* General Text */
@@ -111,10 +112,11 @@ img {
 .skill-typing p,
 .skill-programming p,
 .skill-english p {
-    width: 90%;
+    width: 80%;
     max-width: 500px;
     min-height: 130px;
     height: auto;
+    overflow-wrap: anywhere;
 }
 
 /* General H2 */
@@ -147,15 +149,17 @@ h2 {
     }
 
     .welcome p {
-        width: 100%;
+        width: auto;
         max-width: 100%;
         margin: 1rem 0 0;
         font-size: 1rem;
+        overflow-wrap: anywhere;
     }
 
     p {
         font-size: 1rem;
         width: 100%;
+        max-width: 100%;
         min-height: 0;
     }
 
