@@ -1,7 +1,6 @@
-const button = document.querySelector("#helloButton");
 const title = document.querySelector("h1");
+const button = document.querySelector("#helloButton");
 
 button.addEventListener("click", function () {
-    title.style.color = "red";
-    title.style.backgroundColor = "yellow";
+    title.classList.toggle("highlight");
 });
