@@ -1,9 +1,10 @@
+let age = 14;
 let rank = "Ancient";
 
-if (rank === "Immortal") {
-    console.log("You are Immortal!");
-} else if (rank === "Ancient") {
-    console.log("You are Ancient!");
-} else {
-    console.log("Keep playing!");
+if (age >= 13 && rank === "Ancient") {
+    console.log("Condition 1: true");
+}
+
+if (rank === "Immortal" || rank === "Ancient") {
+    console.log("Condition 2: true");
 }
