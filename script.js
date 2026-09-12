@@ -1,3 +1,4 @@
+```javascript
 const button = document.querySelector("#helloButton");
 const title = document.querySelector("h1");
 
@@ -420,17 +421,27 @@ async function startGame() {
 startGame();
 
 
-/* API + HTML */
+/* Multiple API Data */
 
-async function getPost() {
+const apiData = document.querySelector("#apiData");
+
+async function getTodos() {
 
     const response = await fetch(
-        "https://jsonplaceholder.typicode.com/todos/1"
+        "https://jsonplaceholder.typicode.com/todos"
     );
 
     const data = await response.json();
 
-    result.textContent = data.title;
+    data.slice(0, 10).forEach((todo) => {
+
+        const item = document.createElement("p");
+
+        item.textContent = todo.title;
+
+        apiData.appendChild(item);
+    });
 }
 
-getPost();
+getTodos();
+```
