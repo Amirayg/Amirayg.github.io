@@ -284,3 +284,107 @@ const heroDamage = 55;
 console.log(`My name is ${playerName}.`);
 console.log(`My favorite hero is ${favoriteHero}.`);
 console.log(`${favoriteHero} has ${heroDamage + 10} damage.`);
+
+
+/* Scope */
+
+const globalHero = "Tinker";
+
+console.log(globalHero);
+
+function showScope() {
+    const localHero = "Invoker";
+
+    console.log(localHero);
+}
+
+showScope();
+
+if (true) {
+    const blockHero = "Puck";
+
+    console.log(blockHero);
+}
+
+
+/* try / catch */
+
+try {
+    console.log(heroName);
+} catch (error) {
+    console.log("Something went wrong!");
+}
+
+
+/* finally */
+
+try {
+    console.log("Game started!");
+} catch (error) {
+    console.log("Game error!");
+} finally {
+    console.log("Game finished!");
+}
+
+
+/* JSON */
+
+const jsonHeroObject = {
+    name: "Tinker",
+    role: "Mid",
+    damage: 55
+};
+
+const jsonHero = JSON.stringify(jsonHeroObject);
+
+console.log(jsonHero);
+
+const normalHero = JSON.parse(jsonHero);
+
+console.log(normalHero);
+console.log(normalHero.name);
+console.log(normalHero.role);
+
+
+/* localStorage */
+
+localStorage.setItem("playerName", "Amirhossein");
+
+const savedName = localStorage.getItem("playerName");
+
+console.log(savedName);
+
+
+/* localStorage + JSON */
+
+localStorage.setItem("favoriteHero", JSON.stringify(hero));
+
+const savedHero = JSON.parse(localStorage.getItem("favoriteHero"));
+
+console.log(savedHero);
+console.log(savedHero.name);
+console.log(savedHero.role);
+
+
+/* Remove localStorage data */
+
+// localStorage.removeItem("playerName");
+
+
+/* Date & Time */
+
+const now = new Date();
+
+console.log(now);
+
+console.log(now.getFullYear());
+console.log(now.getMonth() + 1);
+console.log(now.getDate());
+console.log(now.getHours());
+console.log(now.getMinutes());
+console.log(now.getSeconds());
+
+console.log(`Year: ${now.getFullYear()}`);
+console.log(`Month: ${now.getMonth() + 1}`);
+console.log(`Day: ${now.getDate()}`);
+console.log(`Time: ${now.getHours()}:${now.getMinutes()}`);
