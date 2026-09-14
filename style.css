@@ -76,6 +76,43 @@ body {
 
 
 /* =========================
+   PERSIAN / RTL
+========================= */
+
+html[dir="rtl"] body {
+    font-family:
+        Tahoma,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    text-align: right;
+}
+
+
+html[dir="rtl"] .section-label,
+html[dir="rtl"] .project-type {
+    letter-spacing: 1px;
+}
+
+
+html[dir="rtl"] .hero h1 {
+    letter-spacing: 0;
+}
+
+
+html[dir="rtl"] .social-arrow {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+
+html[dir="rtl"] .social-card:hover .social-arrow {
+    transform: translateX(-5px);
+}
+
+
+/* =========================
    PARTICLE CANVAS
 ========================= */
 
@@ -233,6 +270,15 @@ strong {
 }
 
 
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+
 .main-nav {
     display: flex;
 
@@ -285,6 +331,51 @@ strong {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 60%;
+}
+
+
+/* =========================
+   LANGUAGE BUTTON
+========================= */
+
+.language-toggle {
+    min-width: 72px;
+
+    padding: 8px 13px;
+
+    color: var(--cyan);
+
+    background:
+        rgba(20, 170, 240, 0.08);
+
+    border:
+        1px solid rgba(60, 200, 255, 0.2);
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.language-toggle:hover {
+    background:
+        rgba(20, 170, 240, 0.16);
+
+    border-color:
+        rgba(60, 200, 255, 0.4);
+
+    transform: translateY(-2px);
 }
 
 
@@ -1064,6 +1155,11 @@ strong {
     }
 
 
+    .nav-right {
+        gap: 8px;
+    }
+
+
     .menu-toggle {
         display: block;
     }
@@ -1137,6 +1233,13 @@ strong {
 
     .nav-link::after {
         display: none;
+    }
+
+
+    .language-toggle {
+        min-width: 66px;
+
+        padding: 8px 10px;
     }
 
 
