@@ -511,24 +511,17 @@ strong {
 
 .profile-image {
     position: relative;
-
     width: min(320px, 100%);
-
+    height: auto;
     aspect-ratio: 1 / 1;
-
     object-fit: cover;
-
     object-position: center;
-
     border: 3px solid rgba(80, 210, 255, 0.65);
-
     border-radius: 50%;
-
     box-shadow:
         0 0 0 10px rgba(20, 170, 240, 0.05),
         0 0 50px rgba(0, 170, 255, 0.22);
 }
-
 
 /* =========================
    ABOUT
