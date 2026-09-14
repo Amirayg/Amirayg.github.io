@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8">
@@ -11,11 +11,14 @@
     >
 
     <meta
+        id="metaDescription"
         name="description"
         content="Personal website of Amirhossein Ranjbar, also known as AYG. Explore his interests, skills, projects, gaming, programming, mathematics, and music."
     >
 
-    <title>AYG | Amirhossein Ranjbar – Personal Website</title>
+    <title id="pageTitle">
+        AYG | Amirhossein Ranjbar – Personal Website
+    </title>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -51,29 +54,97 @@
                 AYG<span>.</span>
             </a>
 
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
 
-            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+            <div class="nav-right">
 
-                <a href="#welcome" class="nav-link active">Welcome</a>
-                <a href="#about" class="nav-link">About Me</a>
-                <a href="#skills" class="nav-link">My Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#social" class="nav-link">Social Media</a>
-                <a href="#hobbies" class="nav-link">My Hobbies</a>
-                <a href="#thank-you" class="nav-link">Thank You</a>
+                <nav
+                    class="main-nav"
+                    id="mainNav"
+                    aria-label="Main navigation"
+                >
 
-            </nav>
+                    <a
+                        href="#welcome"
+                        class="nav-link active"
+                        data-i18n="navWelcome"
+                    >
+                        Welcome
+                    </a>
+
+                    <a
+                        href="#about"
+                        class="nav-link"
+                        data-i18n="navAbout"
+                    >
+                        About Me
+                    </a>
+
+                    <a
+                        href="#skills"
+                        class="nav-link"
+                        data-i18n="navSkills"
+                    >
+                        My Skills
+                    </a>
+
+                    <a
+                        href="#projects"
+                        class="nav-link"
+                        data-i18n="navProjects"
+                    >
+                        Projects
+                    </a>
+
+                    <a
+                        href="#social"
+                        class="nav-link"
+                        data-i18n="navSocial"
+                    >
+                        Social Media
+                    </a>
+
+                    <a
+                        href="#hobbies"
+                        class="nav-link"
+                        data-i18n="navHobbies"
+                    >
+                        My Hobbies
+                    </a>
+
+                    <a
+                        href="#thank-you"
+                        class="nav-link"
+                        data-i18n="navThankYou"
+                    >
+                        Thank You
+                    </a>
+
+                </nav>
+
+
+                <button
+                    class="language-toggle"
+                    id="languageToggle"
+                    type="button"
+                    aria-label="Switch to Persian"
+                >
+                    فارسی
+                </button>
+
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
 
         </div>
 
@@ -91,19 +162,29 @@
 
                     <div class="hero-content">
 
-                        <p class="eyebrow">
+                        <p
+                            class="eyebrow"
+                            data-i18n="heroEyebrow"
+                        >
                             WELCOME TO MY WEBSITE
                         </p>
 
-                        <h1>
+                        <h1 data-i18n="heroTitle">
                             I'm Amirhossein Ranjbar — AYG
                         </h1>
 
-                        <p class="hero-description">
+                        <p
+                            class="hero-description"
+                            data-i18n="heroDescription"
+                        >
                             Hello! My name is Amirhossein and I am learning web design.
                         </p>
 
-                        <a href="#about" class="primary-button">
+                        <a
+                            href="#about"
+                            class="primary-button"
+                            data-i18n="heroButton"
+                        >
                             Explore My Website
                         </a>
 
@@ -117,6 +198,7 @@
                         <img
                             src="pashmam.jpg"
                             alt="Photo of Amirhossein Ranjbar"
+                            data-i18n-alt="profileImageAlt"
                             class="profile-image"
                             width="320"
                             height="320"
@@ -138,17 +220,20 @@
 
                 <div class="section-card reveal">
 
-                    <p class="section-label">
+                    <p
+                        class="section-label"
+                        data-i18n="aboutLabel"
+                    >
                         WHO I AM
                     </p>
 
-                    <h2>
+                    <h2 data-i18n="aboutTitle">
                         About Me
                     </h2>
 
                     <div class="about-content">
 
-                        <p>
+                        <p data-i18n="aboutText1">
                             Hi! I'm
                             <strong>Amirhossein Ranjbar</strong>,
                             also known as <strong>AYG</strong>, an Iranian student
@@ -158,7 +243,7 @@
                             challenging myself.
                         </p>
 
-                        <p>
+                        <p data-i18n="aboutText2">
                             I’m currently learning
                             <strong>Python and web development</strong>,
                             while working on personal projects to improve my
@@ -167,7 +252,7 @@
                             turning my ideas into real projects.
                         </p>
 
-                        <p>
+                        <p data-i18n="aboutText3">
                             I am a big fan of <strong>gaming</strong>, and my
                             favorite game is <strong>Dota 2</strong>.
                             My brother introduced me to Dota 2 when I was
@@ -179,14 +264,14 @@
                             words, phrases, and communication while playing.
                         </p>
 
-                        <p>
+                        <p data-i18n="aboutText4">
                             I am also very passionate about <strong>music</strong>.
                             I listen to music in my free time, and my favorite
                             artist is <strong>Eminem</strong>. Music is an important
                             part of my interests and something I really enjoy.
                         </p>
 
-                        <p>
+                        <p data-i18n="aboutText5">
                             I enjoy playing Dota 2 competitively, especially in the
                             <strong>Mid Lane</strong>. Gaming has also helped me
                             develop skills such as
@@ -194,7 +279,7 @@
                             and teamwork</strong>.
                         </p>
 
-                        <p>
+                        <p data-i18n="aboutText6">
                             I would describe myself as
                             <strong>curious, hardworking, competitive, creative,
                             and always willing to learn.</strong>
@@ -216,11 +301,14 @@
 
                 <div class="section-card reveal">
 
-                    <p class="section-label">
+                    <p
+                        class="section-label"
+                        data-i18n="skillsLabel"
+                    >
                         WHAT I CAN DO
                     </p>
 
-                    <h2>
+                    <h2 data-i18n="skillsTitle">
                         My Skills
                     </h2>
 
@@ -233,11 +321,11 @@
                                 💻
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillComputerTitle">
                                 Computer Skills
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillComputerText">
                                 I have strong computer skills and good knowledge
                                 of working with Windows, software, files, and
                                 everyday computer tools.
@@ -252,11 +340,11 @@
                                 🌐
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillWebTitle">
                                 Web Development
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillWebText">
                                 I am learning HTML and CSS and currently building
                                 my own websites to improve my web development skills.
                             </p>
@@ -270,11 +358,11 @@
                                 🐍
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillPythonTitle">
                                 Python Programming
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillPythonText">
                                 I am currently learning Python and practicing
                                 programming through small projects and
                                 problem-solving.
@@ -289,11 +377,11 @@
                                 🧠
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillProblemTitle">
                                 Problem Solving
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillProblemText">
                                 I enjoy solving challenging problems and finding
                                 different ways to reach a solution.
                             </p>
@@ -307,11 +395,11 @@
                                 ⌨️
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillTypingTitle">
                                 Fast Typing
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillTypingText">
                                 I can type at around
                                 <strong>80 words per minute</strong>,
                                 allowing me to work quickly and efficiently.
@@ -326,11 +414,11 @@
                                 🇬🇧
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillEnglishTitle">
                                 English
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillEnglishText">
                                 I have
                                 <strong>Upper-Intermediate English skills</strong>
                                 and continue improving my vocabulary, reading,
@@ -346,11 +434,11 @@
                                 🎮
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillGamingTitle">
                                 Gaming & Strategy
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillGamingText">
                                 As a competitive Dota 2 player, I have developed
                                 skills in strategic thinking, decision-making,
                                 teamwork, and staying focused under pressure.
@@ -365,11 +453,11 @@
                                 📚
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillMathTitle">
                                 Mathematics
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillMathText">
                                 I have a strong interest in mathematics and enjoy
                                 logical thinking, calculations, and solving
                                 mathematical problems.
@@ -384,11 +472,11 @@
                                 🚀
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="skillLearningTitle">
                                 Learning & Self-Improvement
                             </h3>
 
-                            <p>
+                            <p data-i18n="skillLearningText">
                                 I am always interested in learning new technologies,
                                 improving my skills, and challenging myself with
                                 new projects.
@@ -412,11 +500,14 @@
 
                 <div class="section-card reveal">
 
-                    <p class="section-label">
+                    <p
+                        class="section-label"
+                        data-i18n="projectsLabel"
+                    >
                         WHAT I HAVE BUILT
                     </p>
 
-                    <h2>
+                    <h2 data-i18n="projectsTitle">
                         My Projects
                     </h2>
 
@@ -431,15 +522,18 @@
 
                             <div class="project-content">
 
-                                <p class="project-type">
+                                <p
+                                    class="project-type"
+                                    data-i18n="projectWebType"
+                                >
                                     WEB DEVELOPMENT
                                 </p>
 
-                                <h3>
+                                <h3 data-i18n="projectWebTitle">
                                     Personal Website
                                 </h3>
 
-                                <p>
+                                <p data-i18n="projectWebText">
                                     My personal website, created to introduce
                                     myself, showcase my skills and interests,
                                     and share information about my projects,
@@ -466,15 +560,18 @@
 
                             <div class="project-content">
 
-                                <p class="project-type">
+                                <p
+                                    class="project-type"
+                                    data-i18n="projectPlannerType"
+                                >
                                     PYTHON APPLICATION
                                 </p>
 
-                                <h3>
+                                <h3 data-i18n="projectPlannerTitle">
                                     AYG Daily Planner
                                 </h3>
 
-                                <p>
+                                <p data-i18n="projectPlannerText">
                                     A simple Python application I built for
                                     managing my daily tasks. Each day, I can
                                     view my tasks and mark them as completed
@@ -484,7 +581,9 @@
                                 <div class="project-tech">
                                     <span>Python</span>
                                     <span>GUI</span>
-                                    <span>Productivity</span>
+                                    <span data-i18n="productivity">
+                                        Productivity
+                                    </span>
                                 </div>
 
                             </div>
@@ -500,15 +599,18 @@
 
                             <div class="project-content">
 
-                                <p class="project-type">
+                                <p
+                                    class="project-type"
+                                    data-i18n="projectPeriodicType"
+                                >
                                     PYTHON APPLICATION
                                 </p>
 
-                                <h3>
+                                <h3 data-i18n="projectPeriodicTitle">
                                     Periodic Table Application
                                 </h3>
 
-                                <p>
+                                <p data-i18n="projectPeriodicText">
                                     A Python GUI application for exploring the
                                     periodic table. Users can search for elements
                                     using their symbol or atomic number and view
@@ -542,11 +644,14 @@
 
                 <div class="section-card reveal">
 
-                    <p class="section-label">
+                    <p
+                        class="section-label"
+                        data-i18n="socialLabel"
+                    >
                         FIND ME ONLINE
                     </p>
 
-                    <h2>
+                    <h2 data-i18n="socialTitle">
                         My Social Media
                     </h2>
 
@@ -566,10 +671,16 @@
 
                             <div>
                                 <h3>GitHub</h3>
-                                <p>My coding projects and repositories.</p>
+
+                                <p data-i18n="socialGithub">
+                                    My coding projects and repositories.
+                                </p>
                             </div>
 
-                            <span class="social-arrow">
+                            <span
+                                class="social-arrow"
+                                aria-hidden="true"
+                            >
                                 →
                             </span>
 
@@ -586,11 +697,19 @@
                             </div>
 
                             <div>
-                                <h3>Email</h3>
-                                <p>Contact me by email.</p>
+                                <h3 data-i18n="socialEmailTitle">
+                                    Email
+                                </h3>
+
+                                <p data-i18n="socialEmail">
+                                    Contact me by email.
+                                </p>
                             </div>
 
-                            <span class="social-arrow">
+                            <span
+                                class="social-arrow"
+                                aria-hidden="true"
+                            >
                                 →
                             </span>
 
@@ -610,10 +729,16 @@
 
                             <div>
                                 <h3>Telegram</h3>
-                                <p>Connect with me on Telegram.</p>
+
+                                <p data-i18n="socialTelegram">
+                                    Connect with me on Telegram.
+                                </p>
                             </div>
 
-                            <span class="social-arrow">
+                            <span
+                                class="social-arrow"
+                                aria-hidden="true"
+                            >
                                 →
                             </span>
 
@@ -633,10 +758,16 @@
 
                             <div>
                                 <h3>Spotify</h3>
-                                <p>Listen to my favorite music.</p>
+
+                                <p data-i18n="socialSpotify">
+                                    Listen to my favorite music.
+                                </p>
                             </div>
 
-                            <span class="social-arrow">
+                            <span
+                                class="social-arrow"
+                                aria-hidden="true"
+                            >
                                 →
                             </span>
 
@@ -658,11 +789,14 @@
 
                 <div class="section-card reveal">
 
-                    <p class="section-label">
+                    <p
+                        class="section-label"
+                        data-i18n="hobbiesLabel"
+                    >
                         THINGS I ENJOY
                     </p>
 
-                    <h2>
+                    <h2 data-i18n="hobbiesTitle">
                         My Hobbies
                     </h2>
 
@@ -675,11 +809,11 @@
                                 🎮
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="hobbyGamingTitle">
                                 Gaming
                             </h3>
 
-                            <p>
+                            <p data-i18n="hobbyGamingText">
                                 I enjoy playing video games in my free time,
                                 and my favorite game is <strong>Dota 2</strong>.
                                 I mainly play <strong>Mid Lane</strong>, and some
@@ -705,11 +839,11 @@
                                 🎵
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="hobbyMusicTitle">
                                 Music
                             </h3>
 
-                            <p>
+                            <p data-i18n="hobbyMusicText">
                                 I listen to music almost every day, whether I’m
                                 relaxing, studying, working on my projects, or
                                 just spending some free time. Music is something
@@ -728,11 +862,11 @@
                                 💻
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="hobbyProgrammingTitle">
                                 Programming
                             </h3>
 
-                            <p>
+                            <p data-i18n="hobbyProgrammingText">
                                 Programming is one of my favorite hobbies because
                                 I enjoy creating things and solving problems with
                                 code. I am currently learning Python and web
@@ -749,11 +883,11 @@
                                 🧠
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="hobbyMathTitle">
                                 Mathematics & Problem Solving
                             </h3>
 
-                            <p>
+                            <p data-i18n="hobbyMathText">
                                 I enjoy mathematics and challenging problems.
                                 I like using logical thinking to find solutions,
                                 understand different concepts, and challenge
@@ -770,11 +904,11 @@
                                 🌐
                             </div>
 
-                            <h3>
+                            <h3 data-i18n="hobbyTechnologyTitle">
                                 Technology
                             </h3>
 
-                            <p>
+                            <p data-i18n="hobbyTechnologyText">
                                 I am very interested in technology and computers.
                                 I enjoy exploring new technologies, learning how
                                 they work, and discovering new things about the
@@ -795,25 +929,35 @@
 
 
         <!-- Thank You -->
-        <section id="thank-you" class="section thank-you-section">
+        <section
+            id="thank-you"
+            class="section thank-you-section"
+        >
 
             <div class="container">
 
                 <div class="thank-you-card reveal">
 
-                    <div class="thank-you-icon">
+                    <div
+                        class="thank-you-icon"
+                        aria-hidden="true"
+                    >
                         ✦
                     </div>
 
-                    <h2>
+                    <h2 data-i18n="thankYouTitle">
                         Thank You!
                     </h2>
 
-                    <p>
+                    <p data-i18n="thankYouText">
                         Thank you for visiting my website.
                     </p>
 
-                    <a href="#welcome" class="primary-button">
+                    <a
+                        href="#welcome"
+                        class="primary-button"
+                        data-i18n="backToTop"
+                    >
                         Back to Top
                     </a>
 
@@ -830,7 +974,10 @@
     <footer class="site-footer">
 
         <p>
-            © <span id="year"></span> AYG | Amirhossein Ranjbar
+            © <span id="year"></span> AYG |
+            <span data-i18n="footerName">
+                Amirhossein Ranjbar
+            </span>
         </p>
 
     </footer>
