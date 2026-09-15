@@ -1283,3 +1283,8 @@ const year =
 
 year.textContent =
     new Date().getFullYear();
+fetch("projects.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    });
