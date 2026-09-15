@@ -1,0 +1,28 @@
+{
+    "projects": [
+        {
+            "name": "Personal Website",
+            "description": "My personal website built with HTML, CSS, and JavaScript.",
+            "technologies": [
+                "HTML",
+                "CSS",
+                "JavaScript"
+            ]
+        },
+        {
+            "name": "AYG Daily Planner",
+            "description": "A simple Python application for managing daily tasks.",
+            "technologies": [
+                "Python"
+            ]
+        },
+        {
+            "name": "Periodic Table Application",
+            "description": "A periodic table application built with Python and PyQt6.",
+            "technologies": [
+                "Python",
+                "PyQt6"
+            ]
+        }
+    ]
+}
