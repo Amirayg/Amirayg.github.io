@@ -1,8 +1,19 @@
 {
     "projects": [
         {
-            "name": "Personal Website",
-            "description": "My personal website built with HTML, CSS, and JavaScript.",
+            "icon": "🌐",
+            "type": {
+                "en": "WEB DEVELOPMENT",
+                "fa": "توسعه وب"
+            },
+            "title": {
+                "en": "Personal Website",
+                "fa": "وب‌سایت شخصی"
+            },
+            "description": {
+                "en": "My personal website, created to introduce myself, showcase my skills and interests, and share information about my projects, programming, technology, gaming, mathematics, and music.",
+                "fa": "وب‌سایت شخصی من که برای معرفی خودم، نمایش مهارت‌ها و علایقم و به اشتراک گذاشتن اطلاعات درباره پروژه‌ها، برنامه‌نویسی، فناوری، بازی، ریاضیات و موسیقی ساخته شده است."
+            },
             "technologies": [
                 "HTML",
                 "CSS",
@@ -10,18 +21,43 @@
             ]
         },
         {
-            "name": "AYG Daily Planner",
-            "description": "A simple Python application for managing daily tasks.",
+            "icon": "📅",
+            "type": {
+                "en": "PYTHON APPLICATION",
+                "fa": "برنامه پایتون"
+            },
+            "title": {
+                "en": "AYG Daily Planner",
+                "fa": "برنامه‌ریز روزانه AYG"
+            },
+            "description": {
+                "en": "A simple Python application I built for managing my daily tasks. Each day, I can view my tasks and mark them as completed using checkboxes.",
+                "fa": "یک برنامه ساده پایتون که برای مدیریت کارهای روزانه خودم ساخته‌ام. هر روز می‌توانم کارهایم را ببینم و با استفاده از چک‌باکس آن‌ها را به عنوان انجام‌شده علامت بزنم."
+            },
             "technologies": [
-                "Python"
+                "Python",
+                "GUI",
+                "Productivity"
             ]
         },
         {
-            "name": "Periodic Table Application",
-            "description": "A periodic table application built with Python and PyQt6.",
+            "icon": "🧪",
+            "type": {
+                "en": "PYTHON APPLICATION",
+                "fa": "برنامه پایتون"
+            },
+            "title": {
+                "en": "Periodic Table Application",
+                "fa": "برنامه جدول تناوبی"
+            },
+            "description": {
+                "en": "A Python GUI application for exploring the periodic table. Users can search for elements using their symbol or atomic number and view information such as the element name and atomic mass.",
+                "fa": "یک برنامه گرافیکی پایتون برای بررسی جدول تناوبی عناصر. کاربران می‌توانند با استفاده از نماد یا عدد اتمی عنصرها را جست‌وجو کنند و اطلاعاتی مانند نام عنصر و جرم اتمی را ببینند."
+            },
             "technologies": [
                 "Python",
-                "PyQt6"
+                "PyQt6",
+                "GUI"
             ]
         }
     ]
