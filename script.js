@@ -358,7 +358,6 @@ const translations = {
         menuClose:
             "Close navigation menu",
 
-
         navWelcome:
             "Welcome",
 
@@ -380,7 +379,6 @@ const translations = {
         navThankYou:
             "Thank You",
 
-
         heroEyebrow:
             "WELCOME TO MY WEBSITE",
 
@@ -395,7 +393,6 @@ const translations = {
 
         profileImageAlt:
             "Photo of Amirhossein Ranjbar",
-
 
         aboutLabel:
             "WHO I AM",
@@ -420,7 +417,6 @@ const translations = {
 
         aboutText6:
             `I would describe myself as <strong>curious, hardworking, competitive, creative, and always willing to learn.</strong>`,
-
 
         skillsLabel:
             "WHAT I CAN DO",
@@ -482,43 +478,11 @@ const translations = {
         skillLearningText:
             "I am always interested in learning new technologies, improving my skills, and challenging myself with new projects.",
 
-
         projectsLabel:
             "WHAT I HAVE BUILT",
 
         projectsTitle:
             "My Projects",
-
-        projectWebType:
-            "WEB DEVELOPMENT",
-
-        projectWebTitle:
-            "Personal Website",
-
-        projectWebText:
-            "My personal website, created to introduce myself, showcase my skills and interests, and share information about my projects, programming, technology, gaming, mathematics, and music.",
-
-        projectPlannerType:
-            "PYTHON APPLICATION",
-
-        projectPlannerTitle:
-            "AYG Daily Planner",
-
-        projectPlannerText:
-            "A simple Python application I built for managing my daily tasks. Each day, I can view my tasks and mark them as completed using checkboxes.",
-
-        productivity:
-            "Productivity",
-
-        projectPeriodicType:
-            "PYTHON APPLICATION",
-
-        projectPeriodicTitle:
-            "Periodic Table Application",
-
-        projectPeriodicText:
-            "A Python GUI application for exploring the periodic table. Users can search for elements using their symbol or atomic number and view information such as the element name and atomic mass.",
-
 
         socialLabel:
             "FIND ME ONLINE",
@@ -540,7 +504,6 @@ const translations = {
 
         socialSpotify:
             "Listen to my favorite music.",
-
 
         hobbiesLabel:
             "THINGS I ENJOY",
@@ -577,7 +540,6 @@ const translations = {
 
         hobbyTechnologyText:
             "I am very interested in technology and computers. I enjoy exploring new technologies, learning how they work, and discovering new things about the digital world. I also like keeping up with the tools and technologies that can help me learn and create new projects.",
-
 
         thankYouTitle:
             "Thank You!",
@@ -617,7 +579,6 @@ const translations = {
         menuClose:
             "بستن منوی ناوبری",
 
-
         navWelcome:
             "خوش آمدید",
 
@@ -639,7 +600,6 @@ const translations = {
         navThankYou:
             "تشکر",
 
-
         heroEyebrow:
             "به وب‌سایت من خوش آمدید",
 
@@ -654,7 +614,6 @@ const translations = {
 
         profileImageAlt:
             "عکس امیرحسین رنجبر",
-
 
         aboutLabel:
             "من کی هستم",
@@ -679,7 +638,6 @@ const translations = {
 
         aboutText6:
             `اگر بخواهم خودم را توصیف کنم، می‌گویم فردی <strong>کنجکاو، سخت‌کوش، رقابت‌جو، خلاق و همیشه آماده یادگیری</strong> هستم.`,
-
 
         skillsLabel:
             "چه کارهایی می‌توانم انجام دهم",
@@ -741,43 +699,11 @@ const translations = {
         skillLearningText:
             "همیشه به یادگیری فناوری‌های جدید، بهتر کردن مهارت‌هایم و به چالش کشیدن خودم با پروژه‌های جدید علاقه دارم.",
 
-
         projectsLabel:
             "چیزهایی که ساخته‌ام",
 
         projectsTitle:
             "پروژه‌های من",
-
-        projectWebType:
-            "توسعه وب",
-
-        projectWebTitle:
-            "وب‌سایت شخصی",
-
-        projectWebText:
-            "وب‌سایت شخصی من که برای معرفی خودم، نمایش مهارت‌ها و علایقم و به اشتراک گذاشتن اطلاعات درباره پروژه‌ها، برنامه‌نویسی، فناوری، بازی، ریاضیات و موسیقی ساخته شده است.",
-
-        projectPlannerType:
-            "برنامه پایتون",
-
-        projectPlannerTitle:
-            "برنامه‌ریز روزانه AYG",
-
-        projectPlannerText:
-            "یک برنامه ساده پایتون که برای مدیریت کارهای روزانه خودم ساخته‌ام. هر روز می‌توانم کارهایم را ببینم و با استفاده از چک‌باکس آن‌ها را به عنوان انجام‌شده علامت بزنم.",
-
-        productivity:
-            "بهره‌وری",
-
-        projectPeriodicType:
-            "برنامه پایتون",
-
-        projectPeriodicTitle:
-            "برنامه جدول تناوبی",
-
-        projectPeriodicText:
-            "یک برنامه گرافیکی پایتون برای بررسی جدول تناوبی عناصر. کاربران می‌توانند با استفاده از نماد یا عدد اتمی عنصرها را جست‌وجو کنند و اطلاعاتی مانند نام عنصر و جرم اتمی را ببینند.",
-
 
         socialLabel:
             "من را آنلاین پیدا کنید",
@@ -799,7 +725,6 @@ const translations = {
 
         socialSpotify:
             "به موسیقی‌های مورد علاقه من گوش دهید.",
-
 
         hobbiesLabel:
             "چیزهایی که دوست دارم",
@@ -837,7 +762,6 @@ const translations = {
         hobbyTechnologyText:
             "علاقه زیادی به فناوری و کامپیوتر دارم. از بررسی فناوری‌های جدید، یادگیری نحوه کار آن‌ها و کشف چیزهای جدید درباره دنیای دیجیتال لذت می‌برم. همچنین دوست دارم با ابزارها و فناوری‌هایی که می‌توانند به یادگیری و ساخت پروژه‌های جدید کمک کنند، آشنا بمانم.",
 
-
         thankYouTitle:
             "ممنون!",
 
@@ -855,9 +779,179 @@ const translations = {
 };
 
 
+/* =========================
+   PROJECTS JSON SYSTEM
+========================= */
+
+let projectsData = [];
+
+
+function renderProjects(language) {
+
+    const projectsGrid =
+        document.getElementById("projectsGrid");
+
+
+    if (!projectsGrid) {
+        return;
+    }
+
+
+    projectsGrid.innerHTML = "";
+
+
+    projectsData.forEach((project) => {
+
+        const article =
+            document.createElement("article");
+
+        article.className =
+            "project-card";
+
+
+        const icon =
+            document.createElement("div");
+
+        icon.className =
+            "project-icon";
+
+        icon.textContent =
+            project.icon;
+
+
+        const content =
+            document.createElement("div");
+
+        content.className =
+            "project-content";
+
+
+        const type =
+            document.createElement("p");
+
+        type.className =
+            "project-type";
+
+        type.textContent =
+            project.type[language];
+
+
+        const title =
+            document.createElement("h3");
+
+        title.textContent =
+            project.title[language];
+
+
+        const description =
+            document.createElement("p");
+
+        description.textContent =
+            project.description[language];
+
+
+        const technologies =
+            document.createElement("div");
+
+        technologies.className =
+            "project-tech";
+
+
+        project.technologies.forEach(
+            (technology) => {
+
+                const span =
+                    document.createElement("span");
+
+
+                if (
+                    typeof technology === "object"
+                ) {
+
+                    span.textContent =
+                        technology[language];
+
+                } else {
+
+                    span.textContent =
+                        technology;
+
+                }
+
+
+                technologies.appendChild(
+                    span
+                );
+
+            }
+        );
+
+
+        content.appendChild(type);
+        content.appendChild(title);
+        content.appendChild(description);
+        content.appendChild(technologies);
+
+
+        article.appendChild(icon);
+        article.appendChild(content);
+
+
+        projectsGrid.appendChild(article);
+
+    });
+
+}
+
+
 /* -------------------------
-   Apply Language
+   Load Projects JSON
 ------------------------- */
+
+fetch("projects.json")
+    .then((response) => {
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Could not load projects.json"
+            );
+
+        }
+
+        return response.json();
+
+    })
+    .then((data) => {
+
+        projectsData =
+            data.projects;
+
+
+        const currentLanguage =
+            document.documentElement.lang === "fa"
+                ? "fa"
+                : "en";
+
+
+        renderProjects(
+            currentLanguage
+        );
+
+    })
+    .catch((error) => {
+
+        console.error(
+            "Error loading projects:",
+            error
+        );
+
+    });
+
+
+/* =========================
+   APPLY LANGUAGE
+========================= */
 
 function applyLanguage(language) {
 
@@ -997,12 +1091,18 @@ function applyLanguage(language) {
         languageToggle.textContent =
             translation.languageButton;
 
+
         languageToggle.setAttribute(
             "aria-label",
             translation.languageAria
         );
 
     }
+
+
+    /* Render projects in selected language */
+
+    renderProjects(language);
 
 
     /* Save selected language */
@@ -1015,9 +1115,9 @@ function applyLanguage(language) {
 }
 
 
-/* -------------------------
-   Language Toggle
-------------------------- */
+/* =========================
+   LANGUAGE TOGGLE
+========================= */
 
 if (languageToggle) {
 
@@ -1027,6 +1127,7 @@ if (languageToggle) {
 
             const currentLanguage =
                 document.documentElement.lang;
+
 
             const nextLanguage =
                 currentLanguage === "fa"
@@ -1044,9 +1145,9 @@ if (languageToggle) {
 }
 
 
-/* -------------------------
-   Load Saved Language
-------------------------- */
+/* =========================
+   LOAD SAVED LANGUAGE
+========================= */
 
 const savedLanguage =
     localStorage.getItem(
@@ -1134,6 +1235,7 @@ navLinks.forEach((link) => {
 
             mainNav.classList.remove("open");
 
+
             menuToggle.setAttribute(
                 "aria-expanded",
                 "false"
@@ -1182,6 +1284,7 @@ const revealObserver =
                     entry.target.classList.add(
                         "visible"
                     );
+
 
                     revealObserver.unobserve(
                         entry.target
@@ -1283,8 +1386,3 @@ const year =
 
 year.textContent =
     new Date().getFullYear();
-fetch("projects.json")
-    .then(response => response.json())
-    .then(data => {
-        console.log(data);
-    });
