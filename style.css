@@ -101,14 +101,87 @@ html[dir="rtl"] .hero h1 {
 }
 
 
+/*
+   Keep the visual layout of structural
+   flex/grid elements unchanged in RTL.
+
+   Text itself can still be RTL.
+*/
+
+html[dir="rtl"] .nav-container,
+html[dir="rtl"] .nav-right,
+html[dir="rtl"] .main-nav,
+html[dir="rtl"] .hero-card,
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .hero-image-wrap,
+html[dir="rtl"] .skills-grid,
+html[dir="rtl"] .projects-grid,
+html[dir="rtl"] .project-card,
+html[dir="rtl"] .social-grid,
+html[dir="rtl"] .social-card,
+html[dir="rtl"] .hobbies-grid {
+    direction: ltr;
+}
+
+
+/*
+   Keep text/content itself RTL.
+*/
+
+html[dir="rtl"] .hero-content,
+html[dir="rtl"] .nav-link,
+html[dir="rtl"] .hero-description,
+html[dir="rtl"] .about-content,
+html[dir="rtl"] .skill-card,
+html[dir="rtl"] .project-content,
+html[dir="rtl"] .social-card,
+html[dir="rtl"] .hobby-card,
+html[dir="rtl"] .section-card {
+    direction: rtl;
+}
+
+
+/*
+   Buttons keep their original visual position,
+   while their text remains RTL.
+*/
+
+html[dir="rtl"] .primary-button,
+html[dir="rtl"] .language-toggle,
+html[dir="rtl"] .menu-toggle {
+    direction: rtl;
+}
+
+
+/*
+   Social arrow keeps the same position and
+   animation direction in both languages.
+*/
+
 html[dir="rtl"] .social-arrow {
-    margin-left: 0;
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 0;
 }
 
 
 html[dir="rtl"] .social-card:hover .social-arrow {
-    transform: translateX(-5px);
+    transform: translateX(5px);
+}
+
+
+/*
+   Keep mobile navigation in the same visual
+   position regardless of page direction.
+*/
+
+html[dir="rtl"] .main-nav {
+    direction: ltr;
+}
+
+
+html[dir="rtl"] .main-nav .nav-link {
+    direction: rtl;
+    text-align: right;
 }
 
 
@@ -806,6 +879,8 @@ strong {
 
 .project-content {
     min-width: 0;
+
+    direction: inherit;
 }
 
 
@@ -844,6 +919,8 @@ strong {
     gap: 8px;
 
     margin-top: 18px;
+
+    direction: ltr;
 }
 
 
